@@ -14,33 +14,14 @@
  * @RELEASE HISTORY
  *
  * DATE                     NAME           DESCRIPTION
- * v4.0_14020803            E.Rahmanian    Create
+ * v3.0.0_14011102_3        E.Rahmanian    Create
  ******************************************************************************************
  */
-#ifndef EMF_H
-#define EMF_H
-
-#define EMF_C
-#define EMF_VERSION_4_0_0_0
-//=========================================================================================
-// includes
-//=========================================================================================
-#include "EMF.Config.h"
-#include "EMF.Preparation.h"
-#include "EMF.Driver.h"
-#include "EMF.IDE.h"
-#include "EMF.DataType.h"
-#include "EMF.Standards.h"
-#include "EMF.Watchdog.h"
-#include "EMF.Init.h"
-#include "EMF.System.h"
-#include "EMF.BitManipulation.h"
-// #include "EMF.GIO.h"
-// #include "EMF.Timer.h"
-// #include "EMF.Delay.h"
-// #include "EMF.SoftWareUart.h"
-// #include "EMF.Adc.h"
-// #include "EMF.EEPROM.h"
-// #include "EMF.Button.h"
-
+#ifndef EMF_INIT_H
+#define EMF_INIT_H
+#if defined(EMF_C)
+    #if defined(IDE3000__V3__HT8__HT66F002_0025_003_004)
+        #include "EMF.Init.IDE3000__V3__HT8__HT66F002_0025_003_004.h"
+    #endif
+#endif
 #endif
