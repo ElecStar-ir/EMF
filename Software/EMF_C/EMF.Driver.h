@@ -14,14 +14,25 @@
 * @RELEASE HISTORY
 *
 * DATE                     NAME           DESCRIPTION
- * v3.0.0_14011102_3        E.Rahmanian    Create
+* v4.0_14020803            E.Rahmanian    Create
 ******************************************************************************************
 */
 #ifndef EMF_DRIVER_H
 #define EMF_DRIVER_H
+#if defined(EMF_C)
+    #if defined(IDE3000__V3)
+        #include "STDINT.H"
+        #include "STDLIB.H"
+        #include "STRING.H"
+        #include "build-in.h"
+        #include "ctype.h"
+        #include "math.h"
+        #include "time.h"
+    #endif
 
-#if defined(EMF__TYPE_HT8)
-    #include "EMF.Driver.HT8.h"
+    #if defined(IDE3000__V3__HT8__HT66F002_0025_003_004__HT66F004)
+        #include "HT66F004.h"
+    #endif
+
 #endif
-
 #endif

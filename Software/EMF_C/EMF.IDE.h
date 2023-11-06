@@ -14,14 +14,12 @@
  * @RELEASE HISTORY
  *
  * DATE                     NAME           DESCRIPTION
- * v3.0.0_14011102_3        E.Rahmanian    Create
+ * v4.0_14020803            E.Rahmanian    Create
  ******************************************************************************************
  */
-#ifndef EMF_DATATYPE_H
-#define EMF_DATATYPE_H
+#ifndef EMF_IDE_H
+#define EMF_IDE_H
+#if defined(EMF_C)
 
-#if defined(EMF__TYPE_HT8)
-    #include "EMF.DataType.HT8.h"
 #endif
-
 #endif

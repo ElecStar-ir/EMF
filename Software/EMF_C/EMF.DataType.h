@@ -14,10 +14,16 @@
  * @RELEASE HISTORY
  *
  * DATE                     NAME           DESCRIPTION
- * v3.0.0_14011102_3        E.Rahmanian    Create
+ * v4.0_14020803            E.Rahmanian    Create
  ******************************************************************************************
  */
-#ifndef EMF_IDE_H
-#define EMF_IDE_H
+#ifndef EMF_DATATYPE_H
+#define EMF_DATATYPE_H
+#if defined(EMF_C)
 
+    #if defined(IDE3000__V3)
+        #include "EMF.DataType.IDE3000__V3.h"
+    #endif
+    
+#endif
 #endif

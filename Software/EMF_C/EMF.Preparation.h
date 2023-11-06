@@ -14,24 +14,19 @@
  * @RELEASE HISTORY
  *
  * DATE                     NAME           DESCRIPTION
- * v3.0.0_14011102_3        E.Rahmanian    Create
+ * v4.0_14020803            E.Rahmanian    Create
  ******************************************************************************************
  */
-#ifndef EMF_TIMER_HT8_H
-#define EMF_TIMER_HT8_H
+#ifndef EMF_PREPARATION_H
+#define EMF_PREPARATION_H
+#if defined(EMF_C)
 
-#if defined(EMF__TYPE_HT8)
-
-    #if defined(EMF__TARGET_HT66F004) || defined(EMF__TARGET_HT66F018)
-        #include "EMF.Timer.HT8.TimeBase.h"
+    #if defined(IDE3000__V3__HT8__HT66F002_0025_003_004__HT66F004)
+        #include "EMF.Preparation.IDE3000__V3__HT8__HT66F002_0025_003_004__HT66F004.h"
+    // #elif defined()
+    #else
+        #error "Please Uncomment the target MCU define in EMF.Config.h"
     #endif
-    
 
-    #if defined(EMF__TARGET_HT66F004)
-        #include "EMF.Timer.HT8.PTM.HT66F002_0025_003_004.h"
-    #elif defined(EMF__TARGET_HT66F018)
-        #include "EMF.Timer.HT8.PTM.HT66F018.h"
-    #endif
 #endif
-
 #endif

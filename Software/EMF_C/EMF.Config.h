@@ -14,14 +14,17 @@
  * @RELEASE HISTORY
  *
  * DATE                     NAME           DESCRIPTION
- * v3.0.0_14011102_3        E.Rahmanian    Create
+ * v4.0_14020803            E.Rahmanian    Create
  ******************************************************************************************
  */
-#ifndef EMF_GPIO_H
-#define EMF_GPIO_H
+#ifndef EMF_CONFIG_H
+#define EMF_CONFIG_H
+#if defined(EMF_C)
 
-#if defined(EMF__TYPE_HT8)
-    #include "EMF.Gpio.HT8.h"
+    // define DNA Style : IDE__DRIVER__GROUP__FAMILY__MCU
+
+    // UnComment Only One Target define
+    #define IDE3000__V3__HT8__HT66F002_0025_003_004__HT66F004 (1)
+
 #endif
-
 #endif

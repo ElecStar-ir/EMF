@@ -14,24 +14,33 @@
  * @RELEASE HISTORY
  *
  * DATE                     NAME           DESCRIPTION
- * v3.0.0_14011102_3        E.Rahmanian    Create
+ * v4.0_14020803            E.Rahmanian    Create
  ******************************************************************************************
  */
-#ifndef EMF_DRIVER_HT8_H
-#define EMF_DRIVER_HT8_H
+#ifndef EMF_H
+#define EMF_H
 
-#if defined(EMF__TYPE_HT8)
-    #include "STDINT.H"
-    #include "STDLIB.H"
-    #include "STRING.H"
-    #include "build-in.h"
-    #include "ctype.h"
-    #include "math.h"
-    #include "time.h"
-    #if defined(EMF__TARGET_HT66F004)
-        #include "HT66F004.h"
-    #elif defined(EMF__TARGET_HT66F018)
-        #include "HT66F018.h"
-    #endif
-#endif
+#define EMF_C
+#define EMF_VERSION_4_0_0_0
+//=========================================================================================
+// includes
+//=========================================================================================
+#include "EMF.Config.h"
+#include "EMF.Preparation.h"
+#include "EMF.Driver.h"
+#include "EMF.IDE.h"
+#include "EMF.DataType.h"
+// #include "EMF.Standards.h"
+// #include "EMF.Watchdog.h"
+// #include "EMF.Init.h"
+// #include "EMF.System.h"
+// #include "EMF.BitManipulation.h"
+// #include "EMF.GIO.h"
+// #include "EMF.Timer.h"
+// #include "EMF.Delay.h"
+// #include "EMF.SoftWareUart.h"
+// #include "EMF.Adc.h"
+// #include "EMF.EEPROM.h"
+// #include "EMF.Button.h"
+
 #endif

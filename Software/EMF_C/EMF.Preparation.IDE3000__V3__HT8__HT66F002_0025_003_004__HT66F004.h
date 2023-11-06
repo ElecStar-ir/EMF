@@ -14,13 +14,28 @@
  * @RELEASE HISTORY
  *
  * DATE                     NAME           DESCRIPTION
- * v3.0.0_14011102_3        E.Rahmanian    Create
+ * v4.0_14020803            E.Rahmanian    Create
  ******************************************************************************************
  */
-#ifndef EMF_INIT_H
-#define EMF_INIT_H
+#ifndef EMF_PREPARATION_IDE3000__V3__HT8__HT66F002_0025_003_004__HT66F004_H
+#define EMF_PREPARATION_IDE3000__V3__HT8__HT66F002_0025_003_004__HT66F004_H
 
-#if defined(EMF__TYPE_HT8)
-    #include "EMF.Init.HT8.h"
+#if defined(IDE3000__V3__HT8__HT66F002_0025_003_004__HT66F004)
+    #define IDE3000__V3__HT8__HT66F002_0025_003_004__HT66F004 (1)
+
+    #define IDE3000__V3__HT8__HT66F002_0025_003_004 (1)
+
+    #define IDE3000__V3__HT8 (1)
+
+    #define IDE3000__V3 (1)
+
+    #define IDE3000 (1)
+
+    #define EMF__IDE3000 (1)
+    #define EMF__DRIVER_V3 (1)
+    #define EMF__GROUP_HT8 (1)
+    #define EMF__FAMILY_HT66F002_0025_003_004 (1)  // HT66F002,HT66F0025,HT66F003,HT66F004
+    #define EMF__MCU_HT66F004 (1)
 #endif
+
 #endif
