@@ -121,60 +121,75 @@ namespace EMF::GIO {
     //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     #define McuRegType uint32
     #define McuRegBitsType uint32Bits_t
-    #define __AddGIOReg(RegName) \
-        _rw McuRegType RegName;  \
-        _rw McuRegBitsType RegName##_bits;
-
 //=========================================================================================
 typedef struct {
     union {
-        __AddGIOReg(MODER) /*!< GPIO port mode register,                     Address offset: 0x00      */
+        _rw McuRegType MODER; 
+        _rw McuRegBitsType MODER_bits;
     };
     //=================================================
     union {
-        __AddGIOReg(OTYPER) /*!< GPIO port output type register,              Address offset: 0x04      */
+        _rw McuRegType OTYPER; 
+        _rw McuRegBitsType OTYPER_bits;
     };
     //=================================================
     union {
-        __AddGIOReg(OSPEEDR) /*!< GPIO port output speed register,             Address offset: 0x08      */
+        _rw McuRegType OSPEEDR; 
+        _rw McuRegBitsType OSPEEDR_bits;
+    };
+    //=================================================
+    //GPIO port pull-up/pull-down register
+    union {
+        _rw McuRegType PUPDR; 
+        _rw McuRegBitsType PUPDR_bits;
+    };
+    //=================================================
+    //GPIO port input data register
+    union {
+        _rw McuRegType IDR; 
+        _rw McuRegBitsType IDR_bits;
+    };
+    //=================================================
+    //GPIO port output data register
+    union {
+        _rw McuRegType ODR; 
+        _rw McuRegBitsType ODR_bits;
     };
     //=================================================
     union {
-        __AddGIOReg(PUPDR) /*!< GPIO port pull-up/pull-down register,        Address offset: 0x0C      */
-    };
-    //=================================================
-    union {
-        __AddGIOReg(IDR) /*!< GPIO port input data register,               Address offset: 0x10      */
-    };
-    //=================================================
-    union {
-        __AddGIOReg(ODR) /*!< GPIO port output data register,              Address offset: 0x14      */
-    };
-    //=================================================
-    union {
-        __AddGIOReg(BSRR) /*!< GPIO port output data register,              Address offset: 0x14      */
+        union {
+            _rw McuRegType BSRR; 
+            _rw McuRegBitsType BSRR_bits;
+        };
         struct {
             _rw uint32 BSRR0To15_BS0To15 : 16;
             _rw uint32 BSRR16To31_BR0To15 : 16;
         };
     };
     //=================================================
+    //GPIO port configuration lock register
     union {
-        __AddGIOReg(LCKR) /*!< GPIO port configuration lock register,       Address offset: 0x1C      */
+        _rw McuRegType LCKR; 
+        _rw McuRegBitsType LCKR_bits;
     };
     //=================================================
+    //GPIO alternate function low register
     union {
-        __AddGIOReg(AFRL) /*!< GPIO alternate function low register,  Address offset: 0x20-0x24 */
+        _rw McuRegType AFRL; 
+        _rw McuRegBitsType AFRL_bits;
     };
     //=================================================
-    union {
-        __AddGIOReg(AFRH) /*!< GPIO alternate function low register,  Address offset: 0x20-0x24 */
+    //GPIO alternate function High register
+    union { 
+        _rw McuRegType AFRH; 
+        _rw McuRegBitsType AFRH_bits;
     };
     //=================================================
+    //GPIO bit reset register,                     Address offset: 0x28
     union {
-        __AddGIOReg(BRR) /*!< GPIO bit reset register,                     Address offset: 0x28      */
+        _rw McuRegType BRR; 
+        _rw McuRegBitsType BRR_bits;
     };
-
 } GIO_TypeDef;
     //=========================================================================================
     #ifdef GPIOA_BASE
