@@ -270,23 +270,23 @@ typedef struct {
         #define GIOM_RegisterClockOff() __HAL_RCC_GPIOM_CLK_DISABLE();
     #endif
     //=========================================================================================
-    #define GIO_PIN_0 ((uint16_t)0x0001U)   /* Pin 0 selected    */
-    #define GIO_PIN_1 ((uint16_t)0x0002U)   /* Pin 1 selected    */
-    #define GIO_PIN_2 ((uint16_t)0x0004U)   /* Pin 2 selected    */
-    #define GIO_PIN_3 ((uint16_t)0x0008U)   /* Pin 3 selected    */
-    #define GIO_PIN_4 ((uint16_t)0x0010U)   /* Pin 4 selected    */
-    #define GIO_PIN_5 ((uint16_t)0x0020U)   /* Pin 5 selected    */
-    #define GIO_PIN_6 ((uint16_t)0x0040U)   /* Pin 6 selected    */
-    #define GIO_PIN_7 ((uint16_t)0x0080U)   /* Pin 7 selected    */
-    #define GIO_PIN_8 ((uint16_t)0x0100U)   /* Pin 8 selected    */
-    #define GIO_PIN_9 ((uint16_t)0x0200U)   /* Pin 9 selected    */
-    #define GIO_PIN_10 ((uint16_t)0x0400U)  /* Pin 10 selected   */
-    #define GIO_PIN_11 ((uint16_t)0x0800U)  /* Pin 11 selected   */
-    #define GIO_PIN_12 ((uint16_t)0x1000U)  /* Pin 12 selected   */
-    #define GIO_PIN_13 ((uint16_t)0x2000U)  /* Pin 13 selected   */
-    #define GIO_PIN_14 ((uint16_t)0x4000U)  /* Pin 14 selected   */
-    #define GIO_PIN_15 ((uint16_t)0x8000U)  /* Pin 15 selected   */
-    #define GIO_PIN_All ((uint16_t)0xFFFFU) /* All pins selected */
+    #define GIO_PIN_0 ((McuRegType)0x0001U)   /* Pin 0 selected    */
+    #define GIO_PIN_1 ((McuRegType)0x0002U)   /* Pin 1 selected    */
+    #define GIO_PIN_2 ((McuRegType)0x0004U)   /* Pin 2 selected    */
+    #define GIO_PIN_3 ((McuRegType)0x0008U)   /* Pin 3 selected    */
+    #define GIO_PIN_4 ((McuRegType)0x0010U)   /* Pin 4 selected    */
+    #define GIO_PIN_5 ((McuRegType)0x0020U)   /* Pin 5 selected    */
+    #define GIO_PIN_6 ((McuRegType)0x0040U)   /* Pin 6 selected    */
+    #define GIO_PIN_7 ((McuRegType)0x0080U)   /* Pin 7 selected    */
+    #define GIO_PIN_8 ((McuRegType)0x0100U)   /* Pin 8 selected    */
+    #define GIO_PIN_9 ((McuRegType)0x0200U)   /* Pin 9 selected    */
+    #define GIO_PIN_10 ((McuRegType)0x0400U)  /* Pin 10 selected   */
+    #define GIO_PIN_11 ((McuRegType)0x0800U)  /* Pin 11 selected   */
+    #define GIO_PIN_12 ((McuRegType)0x1000U)  /* Pin 12 selected   */
+    #define GIO_PIN_13 ((McuRegType)0x2000U)  /* Pin 13 selected   */
+    #define GIO_PIN_14 ((McuRegType)0x4000U)  /* Pin 14 selected   */
+    #define GIO_PIN_15 ((McuRegType)0x8000U)  /* Pin 15 selected   */
+    #define GIO_PIN_All ((McuRegType)0xFFFFU) /* All pins selected */
 
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 // Gio Register Clock ON/OFF
@@ -329,13 +329,13 @@ void GIO_RegisterClockOnOff(GIO_TypeDef *GIOx_Ptr__Ex_GIOA, bool GIOx_Clock_1On0
     #define GIO_PULLDOWN (0x00000002U) /*!< Pull-down activation                */
 //=========================================================================================
 void GIO_Init(GIO_TypeDef *GIOx__Ex_GIOA,
-              uint32 GIO_PINS_Mask__Ex_0b1101,
-              uint32 GIO_MODE__Ex_GIO_MODE_OUTPUT_PUSHPULL,
-              uint32 GIO_PULL__Ex_GIO_PULLNO,
-              uint32 GIO_OUTPUT_SPEED__Ex_GIO_OUTPUT_SPEED_FREQ_LOW,
-              uint32 ALTERNATE_FUNCTION__Ex_GPIO_AF0_SPI1);
-    //=========================================================================================
-    #define GIO_Deinit(GIOx__Ex_GIOA_GIOB, GIO_PINS_Mask__Ex_0b1101) HAL_GPIO_DeInit((GPIO_TypeDef *)GIOx__Ex_GIOA_GIOB, GIO_PINS_Mask__Ex_0b1101)
+              McuRegType GIO_PINS_Mask__Ex_0b1101,
+              McuRegType GIO_MODE__Ex_GIO_MODE_OUTPUT_PUSHPULL,
+              McuRegType GIO_PULL__Ex_GIO_PULLNO,
+              McuRegType GIO_OUTPUT_SPEED__Ex_GIO_OUTPUT_SPEED_FREQ_LOW,
+              McuRegType ALTERNATE_FUNCTION__Ex_GPIO_AF0_SPI1);
+//=========================================================================================
+#define GIO_Deinit(GIOx__Ex_GIOA_GIOB, GIO_PINS_Mask__Ex_0b1101) HAL_GPIO_DeInit((GPIO_TypeDef *)GIOx__Ex_GIOA_GIOB, GIO_PINS_Mask__Ex_0b1101)
 //=========================================================================================
 uint8 GIO_GetConfigState_1Pin_Return_Mode_0Input1Output2Alternate3Analog(GIO_TypeDef *Ex_GIOA, uint8 PinNumber_0tox);
 //=========================================================================================
