@@ -17,14 +17,13 @@
  * v4.1_14020824            E.Rahmanian    Create
  ******************************************************************************************
  */
-#ifndef EMF_CONFIG_H
-#define EMF_CONFIG_H
+#ifndef EMF_TIMER_H
+#define EMF_TIMER_H
 #if defined(EMF_C)
 
-    // define DNA Style : IDE__DRIVER__GROUP__FAMILY__MCU
-
-    // UnComment Only One Target define
-    #define IDE3000__V3__HT8__HT66F002_0025_003_004__HT66F004 (1)
+    #if defined(IDE3000__V3__HT8__HT66F002_0025_003_004__HT66F004)
+        
+    #endif
 
 #endif
 #endif

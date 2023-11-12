@@ -14,7 +14,7 @@
  * @RELEASE HISTORY
  *
  * DATE                     NAME           DESCRIPTION
- * v4.0_14020803            E.Rahmanian    Create
+ * v4.1_14020824            E.Rahmanian    Create
  ******************************************************************************************
  */
 #include "EMF.h"
@@ -49,99 +49,89 @@ bool GIO_GetConfigState_1Pin_Return_Mode_1Input0Output(GIO_TypeDef *Ex_GIOA, uin
 bool GIO_GetConfigState_1Pin_Return_Pull_0PullNO_1PullUp(GIO_TypeDef *Ex_GIOA, uint8 PinNumber_0tox) {
     return Get_1Bit_Return_0or1_SubfDef(Ex_GIOA->PxPU, PinNumber_0tox);
 }
-// //=========================================================================================
-// //=========================================================================================
-// uint8 EMF::GIO::GIO_GetConfigState_1Pin_Return_OutputSpeed_0Low_1Medium_2Low_3High(GIO_TypeDef *Ex_GIOA, uint8 PinNumber_0tox) {
-//     return Get_2Bit_Return_0or3_SubfDef(Ex_GIOA->OSPEEDR, (2 * PinNumber_0tox));
-// }
-// //=========================================================================================
-// //=========================================================================================
-// uint8 EMF::GIO::GIO_GetConfigState_1Pin_Return_Pull_0PullNO_1PullUp_2PullDown(GIO_TypeDef *Ex_GIOA, uint8 PinNumber_0tox) {
-//     return Get_2Bit_Return_0or3_SubfDef(Ex_GIOA->PUPDR, (2 * PinNumber_0tox));
-// }
-// //=========================================================================================
-// //=========================================================================================
-// void EMF::GIO::GIO_Write_AllPins(GIO_TypeDef *Ex_GIOA, McuRegType Value) {
-//     GIO_DirectWrite_AllPins_Defsub(Ex_GIOA, Value);
-// }
-// //=========================================================================================
-// //=========================================================================================
-// void EMF::GIO::GIO_Write_1Pin(GIO_TypeDef *Ex_GIOA, uint8 PinNumber_0tox, bool Value_0or1) {
-//     GIO_DirectWrite_1Pin_Defsub(Ex_GIOA, PinNumber_0tox, Value_0or1);
-// }
-// //=========================================================================================
-// //=========================================================================================
-// void EMF::GIO::GIO_Write_Pins_High(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1011) {
-//     GIO_DirectWrite_Pins_High_WithMask_Defsub(Ex_GIOA, Mask_Ex_0b1011);
-// }
-// //=========================================================================================
-// //=========================================================================================
-// void EMF::GIO::GIO_Write_Pins_Low(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1011) {
-//     GIO_DirectWrite_Pins_Low_WithMask_Defsub(Ex_GIOA, Mask_Ex_0b1011);
-// }
-// //=========================================================================================
-// //=========================================================================================
-// void EMF::GIO::GIO_Write_Pins(GIO_TypeDef *Ex_GIOA, McuRegType Mask_High_Ex_0b1011, McuRegType Mask_Low_Ex_0b1011) {
-//     GIO_DirectWrite_Pins_WithMask_Defsub(Ex_GIOA, Mask_High_Ex_0b1011, Mask_Low_Ex_0b1011);
-// }
-// //=========================================================================================
-// //=========================================================================================
-// void EMF::GIO::GIO_Write_Pins_Toggle(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1011) {
-//     GIO_DirectWrite_Pins_Toggle_WithMask_Defsub(Ex_GIOA, Mask_Ex_0b1011);
-// }
-// //=========================================================================================
-// //=========================================================================================
-// McuRegType EMF::GIO::GIO_GetWriteState_AllPins(GIO_TypeDef *Ex_GIOA) {
-//     return GIO_DirectGetWriteState_AllPins(Ex_GIOA);
-// }
-// //=========================================================================================
-// //=========================================================================================
-// McuRegType EMF::GIO::GIO_Read_AllPins(GIO_TypeDef *Ex_GIOA) {
-//     return GIO_DirectRead_AllPins_Defsubf(Ex_GIOA);
-// }
-// //=========================================================================================
-// //=========================================================================================
-// bool EMF::GIO::GIO_Read_1Pin(GIO_TypeDef *Ex_GIOA, uint8 PinNumber_0tox) {
-//     return GIO_DirectRead_1Pin_Defsubf(Ex_GIOA, PinNumber_0tox);
-// }
-// //=========================================================================================
-// //=========================================================================================
-// bool EMF::GIO::GIO_Read_PinsIs1(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1000) {
-//     return GIO_DirectRead_PinsIs1_WithMask_Defsubf(Ex_GIOA, Mask_Ex_0b1000);
-// }
-// //=========================================================================================
-// //=========================================================================================
-// bool EMF::GIO::GIO_Read_PinsIs0(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1000) {
-//     return GIO_DirectRead_PinsIs0_WithMask_Defsubf(Ex_GIOA, Mask_Ex_0b1000);
-// }
-// //=========================================================================================
-// //=========================================================================================
-// bool EMF::GIO::GIO_Read_PinsIs0And1(GIO_TypeDef *Ex_GIOA, McuRegType Mask_High_Ex_0b1000, McuRegType Mask_Low_Ex_0b1000) {
-//     return GIO_DirectRead_PinsIs0And1_WithMask_Defsubf(Ex_GIOA, Mask_High_Ex_0b1000, Mask_Low_Ex_0b1000);
-// }
-// //=========================================================================================
-// //=========================================================================================
-// bool EMF::GIO::GIO_ReadUntilDetectValue_AllPins_Return_1Detect_0TimeOut(GIO_TypeDef *Ex_GIOA, McuRegType CheckValue, uint32 TryCount) {
-//     while ((TryCount) && (GIO_DirectRead_AllPins_Defsubf(Ex_GIOA) != CheckValue)){
-//         TryCount--;
-//     };
-//     return TryCount && 1;
-// }
-// //=========================================================================================
-// //=========================================================================================
-// bool EMF::GIO::GIO_ReadUntilChangeValue_AllPins_Return_1Detect_0TimeOut(GIO_TypeDef *Ex_GIOA, McuRegType CheckValue, uint32 TryCount) {
-//     while ((TryCount) && (GIO_DirectRead_AllPins_Defsubf(Ex_GIOA) == CheckValue)){
-//         TryCount--;
-//     };
-//     return TryCount && 1;
-// }
-// //=========================================================================================
-// //=========================================================================================
-// bool EMF::GIO::GIO_ReadUntilDetectValue_1Pins_Return_1Detect_0TimeOut(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1000, bool CheckValue_0or1, uint32 TryCount) {
-//     while ((TryCount) && (GIO_DirectRead_PinsIs1_WithMask_Defsubf(Ex_GIOA, Mask_Ex_0b1000) != CheckValue_0or1)){
-//         TryCount--;
-//     };
-//     return TryCount && 1;
-// }
+//=========================================================================================
+//=========================================================================================
+void GIO_Write_AllPins(GIO_TypeDef *Ex_GIOA, McuRegType Value) {
+    GIO_DirectWrite_AllPins_Defsub(Ex_GIOA, Value);
+}
+//=========================================================================================
+//=========================================================================================
+void GIO_Write_1Pin(GIO_TypeDef *Ex_GIOA, uint8 PinNumber_0tox, bool Value_0or1) {
+    GIO_DirectWrite_1Pin_Defsub(Ex_GIOA, PinNumber_0tox, Value_0or1);
+}
+//=========================================================================================
+//=========================================================================================
+void GIO_Write_Pins_High(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1011) {
+    GIO_DirectWrite_Pins_High_WithMask_Defsub(Ex_GIOA, Mask_Ex_0b1011);
+}
+//=========================================================================================
+//=========================================================================================
+void GIO_Write_Pins_Low(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1011) {
+    GIO_DirectWrite_Pins_Low_WithMask_Defsub(Ex_GIOA, Mask_Ex_0b1011);
+}
+//=========================================================================================
+//=========================================================================================
+void GIO_Write_Pins(GIO_TypeDef *Ex_GIOA, McuRegType Mask_High_Ex_0b1011, McuRegType Mask_Low_Ex_0b1011) {
+    GIO_DirectWrite_Pins_WithMask_Defsub(Ex_GIOA, Mask_High_Ex_0b1011, Mask_Low_Ex_0b1011);
+}
+//=========================================================================================
+//=========================================================================================
+void GIO_Write_Pins_Toggle(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1011) {
+    GIO_DirectWrite_Pins_Toggle_WithMask_Defsub(Ex_GIOA, Mask_Ex_0b1011);
+}
+//=========================================================================================
+//=========================================================================================
+McuRegType GIO_GetWriteState_AllPins(GIO_TypeDef *Ex_GIOA) {
+    return GIO_DirectGetWriteState_AllPins(Ex_GIOA);
+}
+//=========================================================================================
+//=========================================================================================
+McuRegType GIO_Read_AllPins(GIO_TypeDef *Ex_GIOA) {
+    return GIO_DirectRead_AllPins_Defsubf(Ex_GIOA);
+}
+//=========================================================================================
+//=========================================================================================
+bool GIO_Read_1Pin(GIO_TypeDef *Ex_GIOA, uint8 PinNumber_0tox) {
+    return GIO_DirectRead_1Pin_Defsubf(Ex_GIOA, PinNumber_0tox);
+}
+//=========================================================================================
+//=========================================================================================
+bool GIO_Read_PinsIs1(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1000) {
+    return GIO_DirectRead_PinsIs1_WithMask_Defsubf(Ex_GIOA, Mask_Ex_0b1000);
+}
+//=========================================================================================
+//=========================================================================================
+bool GIO_Read_PinsIs0(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1000) {
+    return GIO_DirectRead_PinsIs0_WithMask_Defsubf(Ex_GIOA, Mask_Ex_0b1000);
+}
+//=========================================================================================
+//=========================================================================================
+bool GIO_Read_PinsIs0And1(GIO_TypeDef *Ex_GIOA, McuRegType Mask_High_Ex_0b1000, McuRegType Mask_Low_Ex_0b1000) {
+    return GIO_DirectRead_PinsIs0And1_WithMask_Defsubf(Ex_GIOA, Mask_High_Ex_0b1000, Mask_Low_Ex_0b1000);
+}
+//=========================================================================================
+//=========================================================================================
+bool GIO_ReadUntilDetectValue_AllPins_Return_1Detect_0TimeOut(GIO_TypeDef *Ex_GIOA, McuRegType CheckValue, uint32 TryCount) {
+    while ((TryCount) && (GIO_DirectRead_AllPins_Defsubf(Ex_GIOA) != CheckValue)){
+        TryCount--;
+    };
+    return TryCount && 1;
+}
+//=========================================================================================
+//=========================================================================================
+bool GIO_ReadUntilChangeValue_AllPins_Return_1Detect_0TimeOut(GIO_TypeDef *Ex_GIOA, McuRegType CheckValue, uint32 TryCount) {
+    while ((TryCount) && (GIO_DirectRead_AllPins_Defsubf(Ex_GIOA) == CheckValue)){
+        TryCount--;
+    };
+    return TryCount && 1;
+}
+//=========================================================================================
+//=========================================================================================
+bool GIO_ReadUntilDetectValue_1Pins_Return_1Detect_0TimeOut(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1000, bool CheckValue_0or1, uint32 TryCount) {
+    while ((TryCount) && (GIO_DirectRead_PinsIs1_WithMask_Defsubf(Ex_GIOA, Mask_Ex_0b1000) != CheckValue_0or1)){
+        TryCount--;
+    };
+    return TryCount && 1;
+}
 
 #endif

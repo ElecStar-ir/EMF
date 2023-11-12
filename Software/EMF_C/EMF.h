@@ -14,14 +14,14 @@
  * @RELEASE HISTORY
  *
  * DATE                     NAME           DESCRIPTION
- * v4.0_14020803            E.Rahmanian    Create
+ * v4.1_14020824            E.Rahmanian    Create
  ******************************************************************************************
  */
 #ifndef EMF_H
 #define EMF_H
 
 #define EMF_C
-#define EMF_VERSION_4_0_0_0
+#define EMF_VERSION_4_1_0_0
 //=========================================================================================
 // includes
 //=========================================================================================
@@ -36,7 +36,7 @@
 #include "EMF.System.h"
 #include "EMF.BitManipulation.h"
 #include "EMF.GIO.h"
-// #include "EMF.Timer.h"
+#include "EMF.Timer.h"
 // #include "EMF.Delay.h"
 // #include "EMF.SoftWareUart.h"
 // #include "EMF.Adc.h"

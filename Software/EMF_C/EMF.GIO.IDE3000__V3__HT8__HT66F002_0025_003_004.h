@@ -14,7 +14,7 @@
  * @RELEASE HISTORY
  *
  * DATE                     NAME           DESCRIPTION
- * v4.0_14020803            E.Rahmanian    Create
+ * v4.1_14020824            E.Rahmanian    Create
  ******************************************************************************************
  */
 #ifndef EMF_GIO_IDE3000__V3__HT8__HT66F002_0025_003_004_H
@@ -22,95 +22,33 @@
 #if defined(IDE3000__V3__HT8__HT66F002_0025_003_004)
 /**
 * @code
-#include "main.h"
-#include <stdio.h>
 #include "EMF.h"
+#include "HT66F004.h"
 
-int main(void){
+void main() {
     uint8 a;
-    uint32 b;
+    bool b;
     EMF_init();
-    SetCoreClockTo_HSI_8MHZ_Return_1Ok_0Failed();
+    SetCoreClockTo_HIRC_DIV1_8MHZ_Return_1Ok_0Failed();
 
-    GIO_RegisterClockOnOff(GIOA, 1);
-    GIO_RegisterClockOnOff(GIOF, 1);
-
-    GIO_Init(GIOA, 0b111, GIO_MODE_OUTPUT_OPENDRAIN, GIO_PULLDOWN, GIO_OUTPUT_SPEED_FREQ_HIGH,0);
-    //GIO_Deinit(GIOA, 0b111);
-
-    a = GIO_GetConfigState_1Pin_Return_Mode_0Input1Output2Alternate3Analog(GIOA, 0);
-    printf("%d\n", a);
-    a = GIO_GetConfigState_1Pin_Return_OutputMode_0PushPull_1OpenDrain(GIOA, 0);
-    printf("%d\n", a);
-    a = GIO_GetConfigState_1Pin_Return_OutputSpeed_0Low_1Medium_2Low_3High(GIOA, 0);
-    printf("%d\n", a);
-    a = GIO_GetConfigState_1Pin_Return_Pull_0PullNO_1PullUp_2PullDown(GIOA, 0);
-    printf("%d\n", a);
-
-    GIO_Init(GIOF, 0b11, GIO_MODE_OUTPUT_PUSHPULL, GIO_PULLUP, GIO_OUTPUT_SPEED_FREQ_HIGH, 0);
-    GIO_Write_AllPins(GIOF, 0b11);
-    GIO_Write_1Pin(GIOF, 0, 0);
-    GIO_Write_1Pin(GIOF, 1, 0);
-    GIO_Write_Pins_High(GIOF, 0b11);
-    GIO_Write_Pins_Low(GIOF, 0b10);
-    GIO_Write_Pins_Low(GIOF, 0b01);
-    GIO_Write_Pins_High(GIOA, 0b111);
-    GIO_Write_Pins(GIOA, 0b110, 0b001);
-    GIO_Write_Pins_Low(GIOA, 0b111);
-    GIO_Write_Pins(GIOA, 0b110, 0b001);
-    GIO_Write_Pins_Toggle(GIOF, 0b11);
-    GIO_Write_Pins_Toggle(GIOF, 0b10);
-    GIO_Write_Pins_Toggle(GIOA, 0b111);
-    GIO_Write_Pins_Toggle(GIOA, 0b010);
-    GIO_Write_Pins_Toggle(GIOA, 0b010);
-    b = GIO_GetWriteState_AllPins(GIOA);
-    printf("%d\n", b);
-
-    b = GIO_Read_AllPins(GIOA);
-    printf("%d\n", b);
-    b = GIO_Read_AllPins(GIOF);
-    printf("%d\n", b);
-    a = GIO_Read_1Pin(GIOA, 1);
-    printf("%d\n", a);
-    a = GIO_Read_1Pin(GIOA, 2);
-    printf("%d\n", a);
-    a = GIO_Read_1Pin(GIOA, 4);
-    printf("%d\n", a);
-    a = GIO_Read_PinsIs1(GIOA, 0b1);
-    printf("%d\n", a);
-    a = GIO_Read_PinsIs1(GIOA, 0b11000);
-    printf("%d\n", a);
-    a = GIO_Read_PinsIs1(GIOA, 0b10000);
-    printf("%d\n", a);
-     a = GIO_Read_PinsIs0(GIOA, 0b1);
-    printf("%d\n", a);
-    a = GIO_Read_PinsIs0(GIOA, 0b11000);
-    printf("%d\n", a);
-    a = GIO_Read_PinsIs0(GIOA, 0b10000);
-    printf("%d\n", a);
-    a = GIO_Read_PinsIs0And1(GIOA, 0b10, 0b100);
-    printf("%d\n", a);
-    a = GIO_Read_PinsIs0And1(GIOA, 0b10000, 0b11);
-    printf("%d\n", a);
-    a = GIO_Read_PinsIs0And1(GIOA, 0b10000, 0b1111);
-    printf("%d\n", a);
-    
-    
-    GIO_Init(GIOF, 0b11, GIO_MODE_INPUT, GIO_PULLUP, 0, 0);
-    a = GIO_ReadUntilDetectValue_AllPins_Return_1Detect_0TimeOut(GIOF, 0b10, 1000000);
-    printf("%d\n", a);
-    a = GIO_ReadUntilChangeValue_AllPins_Return_1Detect_0TimeOut(GIOF, 0b11, 1000000);
-    printf("%d\n", a);
-    a = GIO_ReadUntilDetectValue_1Pins_Return_1Detect_0TimeOut(GIOF, 0b10, 0, 1000000);
-    printf("%d\n", a);
-
-    GIO_Deinit(GIOA, 0b111);
-    GIO_Deinit(GIOF, 0b11);
-
-    GIO_RegisterClockOnOff(GIOA, 0);
-    GIO_RegisterClockOnOff(GIOF, 0);
-
-    while (1);
+    GIO_Init(GIOA, 0b11, GIO_MODE_INPUT, GIO_INPUT_PULLLUP);
+    a = GIO_GetConfigState_1Pin_Return_Mode_1Input0Output(GIOA, 1);
+    a = GIO_GetConfigState_1Pin_Return_Pull_0PullNO_1PullUp(GIOA, 1);
+    GIO_Write_AllPins(GIOA, 0b1010);
+    GIO_Write_1Pin(GIOA, 1, 0);
+    GIO_Write_Pins_High(GIOA, 0b11);
+    GIO_Write_Pins_Low(GIOA, 0b100);
+    GIO_Write_Pins(GIOA, 0b1001, 0b10);
+    GIO_Write_Pins_Toggle(GIOA, 0b1010);
+    a = GIO_GetWriteState_AllPins(GIOA);
+    a = GIO_Read_AllPins(GIOA);
+    b = GIO_Read_1Pin(GIOA, 3);
+    b = GIO_Read_PinsIs1(GIOA, 0b1000);
+    b = GIO_Read_PinsIs0(GIOA, 0b0101);
+    b = GIO_Read_PinsIs0And1(GIOA, 0b1000, 0b011);
+    b = GIO_ReadUntilDetectValue_AllPins_Return_1Detect_0TimeOut(GIOA, 0b100, 2000);
+    b = GIO_ReadUntilChangeValue_AllPins_Return_1Detect_0TimeOut(GIOA, 0b100, 3000);
+    b = GIO_ReadUntilDetectValue_1Pins_Return_1Detect_0TimeOut(GIOA, 0b10000, 1, 3000);
 }
 * @endcode
 */
@@ -196,76 +134,76 @@ void GIO_Init(GIO_TypeDef *GIOx__Ex_GIOA,
 bool GIO_GetConfigState_1Pin_Return_Mode_1Input0Output(GIO_TypeDef *Ex_GIOA, uint8 PinNumber_0tox);
 //=========================================================================================
 bool GIO_GetConfigState_1Pin_Return_Pull_0PullNO_1PullUp(GIO_TypeDef *Ex_GIOA, uint8 PinNumber_0tox);
-// //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-// // Gio Write
-// //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-//     #define GIO_DirectWrite_AllPins_Defsub(Ex_GIOA, Value) (Ex_GIOA->ODR = Value)
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// Gio Write
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+#define GIO_DirectWrite_AllPins_Defsub(Ex_GIOA, Value) (Ex_GIOA->Px = Value)
 
-// void GIO_Write_AllPins(GIO_TypeDef *Ex_GIOA, McuRegType Value);
-//     //=========================================================================================
-//     #define GIO_DirectWrite_1Pin_Defsub(Ex_GIOA, PinNumber_0tox, Value_0or1) \
-//         (Set_1Bit_SubDef((Ex_GIOA->ODR), PinNumber_0tox, Value_0or1))
+void GIO_Write_AllPins(GIO_TypeDef *Ex_GIOA, McuRegType Value);
+//=========================================================================================
+#define GIO_DirectWrite_1Pin_Defsub(Ex_GIOA, PinNumber_0tox, Value_0or1) \
+        (Set_1Bit_SubDef((Ex_GIOA->Px), PinNumber_0tox, Value_0or1))
 
-// void GIO_Write_1Pin(GIO_TypeDef *Ex_GIOA, uint8 PinNumber_0tox, bool Value_0or1);
-//     //=========================================================================================
-//     #define GIO_DirectWrite_Pins_High_WithMask_Defsub(Ex_GIOA, Mask_Ex_0b1011) \
-//         (Set_BitsTo1_WithMask_SubDef((Ex_GIOA->BSRR0To15_BS0To15), Mask_Ex_0b1011))
+void GIO_Write_1Pin(GIO_TypeDef *Ex_GIOA, uint8 PinNumber_0tox, bool Value_0or1);
+//=========================================================================================
+#define GIO_DirectWrite_Pins_High_WithMask_Defsub(Ex_GIOA, Mask_Ex_0b1011) \
+        (Set_BitsTo1_WithMask_SubDef((Ex_GIOA->Px), Mask_Ex_0b1011))
 
-// void GIO_Write_Pins_High(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1011);
-//     //=========================================================================================
-//     #define GIO_DirectWrite_Pins_Low_WithMask_Defsub(Ex_GIOA, Mask_Ex_0b1011) \
-//         (Set_BitsTo1_WithMask_SubDef((Ex_GIOA->BSRR16To31_BR0To15), Mask_Ex_0b1011))
+void GIO_Write_Pins_High(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1011);
+//=========================================================================================
+#define GIO_DirectWrite_Pins_Low_WithMask_Defsub(Ex_GIOA, Mask_Ex_0b1011) \
+        (Set_BitsTo1_WithMask_SubDef((Ex_GIOA->Px), Mask_Ex_0b1011))
 
-// void GIO_Write_Pins_Low(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1011);
-//     //=========================================================================================
-//     #define GIO_DirectWrite_Pins_WithMask_Defsub(Ex_GIOA, Mask_High_Ex_0b1011, Mask_Low_Ex_0b1011) \
-//         GIO_DirectWrite_Pins_High_WithMask_Defsub(Ex_GIOA, Mask_High_Ex_0b1011);                   \
-//         GIO_DirectWrite_Pins_Low_WithMask_Defsub(Ex_GIOA, Mask_Low_Ex_0b1011)
+void GIO_Write_Pins_Low(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1011);
+//=========================================================================================
+#define GIO_DirectWrite_Pins_WithMask_Defsub(Ex_GIOA, Mask_High_Ex_0b1011, Mask_Low_Ex_0b1011) \
+        GIO_DirectWrite_Pins_High_WithMask_Defsub(Ex_GIOA, Mask_High_Ex_0b1011);                   \
+        GIO_DirectWrite_Pins_Low_WithMask_Defsub(Ex_GIOA, Mask_Low_Ex_0b1011)
 
-// void GIO_Write_Pins(GIO_TypeDef *Ex_GIOA, McuRegType Mask_High_Ex_0b1011, McuRegType Mask_Low_Ex_0b1011);
-//     //=========================================================================================
-//     #define GIO_DirectWrite_Pins_Toggle_WithMask_Defsub(Ex_GIOA, Mask_Ex_0b1011) \
-//         (Toggle_Bits_WithMask_SubDef((Ex_GIOA->ODR), Mask_Ex_0b1011))
+void GIO_Write_Pins(GIO_TypeDef *Ex_GIOA, McuRegType Mask_High_Ex_0b1011, McuRegType Mask_Low_Ex_0b1011);
+//=========================================================================================
+#define GIO_DirectWrite_Pins_Toggle_WithMask_Defsub(Ex_GIOA, Mask_Ex_0b1011) \
+        (Toggle_Bits_WithMask_SubDef((Ex_GIOA->Px), Mask_Ex_0b1011))
 
-// void GIO_Write_Pins_Toggle(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1011);
-//     //=========================================================================================
-//     #define GIO_DirectGetWriteState_AllPins(Ex_GIOA) (Ex_GIOA->ODR)
+void GIO_Write_Pins_Toggle(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1011);
+//=========================================================================================
+#define GIO_DirectGetWriteState_AllPins(Ex_GIOA) (Ex_GIOA->Px)
 
-// /**
-//  * @brief This function works correct only in output mode
-//  */
-// McuRegType GIO_GetWriteState_AllPins(GIO_TypeDef *Ex_GIOA);
-// //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-// // Gio Read
-// //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-//     #define GIO_DirectRead_AllPins_Defsubf(Ex_GIOA) (Ex_GIOA->IDR)
-// McuRegType GIO_Read_AllPins(GIO_TypeDef *Ex_GIOA);
-//     //=========================================================================================
-//     #define GIO_DirectRead_1Pin_Defsubf(Ex_GIOA, PinNumber_0tox) \
-//         (Get_1Bit_Return_0or1_SubfDef((Ex_GIOA->IDR), PinNumber_0tox))
+/**
+ * @brief This function works correct only in output mode
+ */
+McuRegType GIO_GetWriteState_AllPins(GIO_TypeDef *Ex_GIOA);
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// Gio Read
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+#define GIO_DirectRead_AllPins_Defsubf(Ex_GIOA) (Ex_GIOA->Px)
+McuRegType GIO_Read_AllPins(GIO_TypeDef *Ex_GIOA);
+//=========================================================================================
+#define GIO_DirectRead_1Pin_Defsubf(Ex_GIOA, PinNumber_0tox) \
+        (Get_1Bit_Return_0or1_SubfDef((Ex_GIOA->Px), PinNumber_0tox))
 
-// bool GIO_Read_1Pin(GIO_TypeDef *Ex_GIOA, uint8 PinNumber_0tox);
-//     //=========================================================================================
-//     #define GIO_DirectRead_PinsIs1_WithMask_Defsubf(Ex_GIOA, Mask_Ex_0b1000) \
-//         (Get_BitsIs1_WithMask_Return_0or1_SubfDef((Ex_GIOA->IDR), Mask_Ex_0b1000))
+bool GIO_Read_1Pin(GIO_TypeDef *Ex_GIOA, uint8 PinNumber_0tox);
+//=========================================================================================
+#define GIO_DirectRead_PinsIs1_WithMask_Defsubf(Ex_GIOA, Mask_Ex_0b1000) \
+        (Get_BitsIs1_WithMask_Return_0or1_SubfDef((Ex_GIOA->Px), Mask_Ex_0b1000))
 
-// bool GIO_Read_PinsIs1(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1000);
-//     //=========================================================================================
-//     #define GIO_DirectRead_PinsIs0_WithMask_Defsubf(Ex_GIOA, Mask_Ex_0b1000) \
-//         (Get_BitsIs0_WithMask_Return_0or1_SubfDef((Ex_GIOA->IDR), Mask_Ex_0b1000))
+bool GIO_Read_PinsIs1(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1000);
+//=========================================================================================
+#define GIO_DirectRead_PinsIs0_WithMask_Defsubf(Ex_GIOA, Mask_Ex_0b1000) \
+        (Get_BitsIs0_WithMask_Return_0or1_SubfDef((Ex_GIOA->Px), Mask_Ex_0b1000))
 
-// bool GIO_Read_PinsIs0(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1000);
-//     //=========================================================================================
-//     #define GIO_DirectRead_PinsIs0And1_WithMask_Defsubf(Ex_GIOA, Mask_High_Ex_0b1000, Mask_Low_Ex_0b1000) \
-//         (Get_BitsIs0And1_WithMask_Return_0or1_SubfDef((Ex_GIOA->IDR), Mask_High_Ex_0b1000, Mask_Low_Ex_0b1000))
+bool GIO_Read_PinsIs0(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1000);
+//=========================================================================================
+#define GIO_DirectRead_PinsIs0And1_WithMask_Defsubf(Ex_GIOA, Mask_High_Ex_0b1000, Mask_Low_Ex_0b1000) \
+       (Get_BitsIs0And1_WithMask_Return_0or1_SubfDef((Ex_GIOA->Px), Mask_High_Ex_0b1000, Mask_Low_Ex_0b1000))
 
-// bool GIO_Read_PinsIs0And1(GIO_TypeDef *Ex_GIOA, McuRegType Mask_High_Ex_0b1000, McuRegType Mask_Low_Ex_0b1000);
-// //=========================================================================================
-// bool GIO_ReadUntilDetectValue_AllPins_Return_1Detect_0TimeOut(GIO_TypeDef *Ex_GIOA, McuRegType CheckValue, uint32 TryCount);
-// //=========================================================================================
-// bool GIO_ReadUntilChangeValue_AllPins_Return_1Detect_0TimeOut(GIO_TypeDef *Ex_GIOA, McuRegType CheckValue, uint32 TryCount);
-// //=========================================================================================
-// bool GIO_ReadUntilDetectValue_1Pins_Return_1Detect_0TimeOut(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1000, bool CheckValue_0or1, uint32 TryCount);
+bool GIO_Read_PinsIs0And1(GIO_TypeDef *Ex_GIOA, McuRegType Mask_High_Ex_0b1000, McuRegType Mask_Low_Ex_0b1000);
+//=========================================================================================
+bool GIO_ReadUntilDetectValue_AllPins_Return_1Detect_0TimeOut(GIO_TypeDef *Ex_GIOA, McuRegType CheckValue, uint32 TryCount);
+//=========================================================================================
+bool GIO_ReadUntilChangeValue_AllPins_Return_1Detect_0TimeOut(GIO_TypeDef *Ex_GIOA, McuRegType CheckValue, uint32 TryCount);
+//=========================================================================================
+bool GIO_ReadUntilDetectValue_1Pins_Return_1Detect_0TimeOut(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1000, bool CheckValue_0or1, uint32 TryCount);
 
 
 #endif
