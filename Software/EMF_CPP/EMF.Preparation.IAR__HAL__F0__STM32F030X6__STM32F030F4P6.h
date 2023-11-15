@@ -21,19 +21,25 @@
 #define EMF_PREPARATION_IAR__HAL__F0__STM32F030X6__STM32F030F4P6_H
 
 #if defined(IAR__HAL__F0__STM32F030X6__STM32F030F4P6)
+    //MCU DNA!
     #define X__HAL__F0__STM32F030X6__STM32F030F4P6 (1)
 
+    //Family DNA!
     #define IAR__HAL__F0__STM32F030X6 (1)
     #define X__HAL__F0__STM32F030X6 (1)
 
+    //Driver DNA!
     #define IAR__HAL__F0 (1)
     #define X__HAL__F0 (1)
 
+    //IDE DNA!
     #define IAR__HAL (1)
     #define X__HAL (1)
 
+    //IDE DNA!
     #define IAR (1)
 
+    //Parts Of MCU DNA!
     #define EMF__IDE_IAR (1)
     #define EMF__DRIVER_HAL (1)
     #define EMF__GROUP_F0 (1)

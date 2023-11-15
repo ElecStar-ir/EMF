@@ -23,6 +23,8 @@
 
     #if defined(IDE3000__V3__HT8__HT66F002_0025_003_004)
         #include "EMF.GIO.IDE3000__V3__HT8__HT66F002_0025_003_004.h"
+    #elif defined(IDE3000__V3__HT8__HT66F0021_31_41)
+        #include "EMF.GIO.IDE3000__V3__HT8__HT66F0021_31_41.h"
     #endif
 
 #endif
