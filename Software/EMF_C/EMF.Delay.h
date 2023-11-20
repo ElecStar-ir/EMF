@@ -14,8 +14,7 @@
 * @RELEASE HISTORY
 *
 * DATE                     NAME           DESCRIPTION
-* v4.1_14020824            E.Rahmanian    Create
-* v4.2_14020824            E.Rahmanian    Add "EMF.Watchdog.IDE3000__V3__HT8__HT66F0021_31_41.h"
+* v4.2.1_14020829           E.Rahmanian    Create
 ******************************************************************************************
 */
 #ifndef EMF_DELAY_H

@@ -15,6 +15,8 @@
  *
  * DATE                     NAME           DESCRIPTION
  * v4.1_14020824            E.Rahmanian    Create
+ * v4.2.1_14020829          E.Rahmanian    Optimize{Change Name:GIO_ReadUntilDetectValue_1Pins_Return_1Detect_0TimeOut to GIO_ReadUntilDetectValue_1Pin_Return_1Detect_0TimeOut}
+ *                                         Fixed{GIO_DirectWrite_Pins_Low_WithMask}
  ******************************************************************************************
  */
 #include "EMF.h"
@@ -127,7 +129,7 @@ bool GIO_ReadUntilChangeValue_AllPins_Return_1Detect_0TimeOut(GIO_TypeDef *Ex_GI
 }
 //=========================================================================================
 //=========================================================================================
-bool GIO_ReadUntilDetectValue_1Pins_Return_1Detect_0TimeOut(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1000, bool CheckValue_0or1, uint32 TryCount) {
+bool GIO_ReadUntilDetectValue_1Pin_Return_1Detect_0TimeOut(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1000, bool CheckValue_0or1, uint32 TryCount) {
     while ((TryCount) && (GIO_DirectRead_PinsIs1_WithMask_Defsubf(Ex_GIOA, Mask_Ex_0b1000) != CheckValue_0or1)){
         TryCount--;
     };

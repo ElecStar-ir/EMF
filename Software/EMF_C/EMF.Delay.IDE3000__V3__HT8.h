@@ -14,7 +14,7 @@
  * @RELEASE HISTORY
  *
  * DATE                     NAME           DESCRIPTION
- * v3.0.0_14011102_3        E.Rahmanian    Create
+ * v4.2.1_14020829           E.Rahmanian    Create
  ******************************************************************************************
  */
 #ifndef EMF_DELAY_HT8_H

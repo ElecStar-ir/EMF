@@ -15,6 +15,8 @@
  *
  * DATE                     NAME           DESCRIPTION
  * v4.0_14020803            E.Rahmanian    Create
+ * v4.0.2_14020829          E.Rahmanian    Optimize{Change Name:GIO_ReadUntilDetectValue_1Pins_Return_1Detect_0TimeOut to GIO_ReadUntilDetectValue_1Pin_Return_1Detect_0TimeOut}
+ *                                         Fixed{GIO_DirectWrite_Pins_Low_WithMask_Defsub}
  ******************************************************************************************
  */
 #ifndef EMF_GIO_IAR__HAL__F0__STM32F030X6_H
@@ -362,7 +364,7 @@ void GIO_Write_1Pin(GIO_TypeDef *Ex_GIOA, uint8 PinNumber_0tox, bool Value_0or1)
 void GIO_Write_Pins_High(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1011);
     //=========================================================================================
     #define GIO_DirectWrite_Pins_Low_WithMask_Defsub(Ex_GIOA, Mask_Ex_0b1011) \
-        (Set_BitsTo1_WithMask_SubDef((Ex_GIOA->BSRR16To31_BR0To15), Mask_Ex_0b1011))
+        (Set_BitsTo0_WithMask_SubDef((Ex_GIOA->BSRR16To31_BR0To15), Mask_Ex_0b1011))
 
 void GIO_Write_Pins_Low(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1011);
     //=========================================================================================
@@ -413,7 +415,7 @@ bool GIO_ReadUntilDetectValue_AllPins_Return_1Detect_0TimeOut(GIO_TypeDef *Ex_GI
 //=========================================================================================
 bool GIO_ReadUntilChangeValue_AllPins_Return_1Detect_0TimeOut(GIO_TypeDef *Ex_GIOA, McuRegType CheckValue, uint32 TryCount);
 //=========================================================================================
-bool GIO_ReadUntilDetectValue_1Pins_Return_1Detect_0TimeOut(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1000, bool CheckValue_0or1, uint32 TryCount);
+bool GIO_ReadUntilDetectValue_1Pin_Return_1Detect_0TimeOut(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1000, bool CheckValue_0or1, uint32 TryCount);
 
 }  // namespace EMF::GIO
 using namespace EMF::GIO;

@@ -28,8 +28,8 @@
      */
 
 
-    // #define IDE3000__V3__HT8__HT66F002_0025_003_004__HT66F004 (1)
-    #define IDE3000__V3__HT8__HT66F0021_31_41__HT66F0031 (1)
+    #define IDE3000__V3__HT8__HT66F002_0025_003_004__HT66F004 (1)
+    //#define IDE3000__V3__HT8__HT66F0021_31_41__HT66F0031 (1)
 
 #endif
 #endif
