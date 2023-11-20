@@ -53,8 +53,7 @@ void main() {
 }
 * @endcode
 */
-* @endcode
-*/
+
 #if defined(IDE3000__V3__HT8__HT66F002_0025_003_004)
 
 #define Core_HIRC_ClockSource_Hz 8000000
