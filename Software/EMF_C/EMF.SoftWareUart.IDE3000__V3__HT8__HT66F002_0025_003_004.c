@@ -42,13 +42,13 @@ void SoftWareUART_Transmit_Byte(uint8 TransmitData){
 		TransmitData >>= 1;
 	}
 }
-// //=========================================================================================
-// //=========================================================================================
-// void SoftWareUART_Transmit_Bytes(uint8 *TransmitDataByte0_Ptr, uint8 Lenghh){
-// 	uint8 i;
-// 	for(i = 0 ; i < Lenghh ; i++){
-// 		SoftWareUART_Transmit_Byte(TransmitDataByte0_Ptr[i]);
-// 	} 
-// }
+//=========================================================================================
+//=========================================================================================
+void SoftWareUART_Transmit_Bytes(uint8 *TransmitDataByte0_Ptr, uint8 Lenghh){
+	uint8 i;
+	for(i = 0 ; i < Lenghh ; i++){
+		SoftWareUART_Transmit_Byte(TransmitDataByte0_Ptr[i]);
+	} 
+}
 
 #endif

@@ -21,8 +21,6 @@
 #define EMF_SYSTEM_IDE3000__V3__HT8__HT66F002_0025_003_004_H
 /**
 * @code
-/**
-* @code
 #include "EMF.h"
 #include "HT66F004.h"
 

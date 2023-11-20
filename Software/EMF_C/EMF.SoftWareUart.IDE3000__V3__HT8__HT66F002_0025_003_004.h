@@ -24,9 +24,9 @@
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 // Config define
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-#define TXD  _pa7     // TX pin mapping on PA7 ex) GPIOC->Px_bits.bit0
-#define TXC  _pac7    // TX pin input/output control ex) GPIOC->PxC_bits.bit0
-#define TXPU _papu7  // TX pin pull-high control ex) GPIOC->PxPU_bits.bit0
+#define TXD  _pa6     // TX pin mapping on PA7 ex) GPIOC->Px_bits.bit0
+#define TXC  _pac6    // TX pin input/output control ex) GPIOC->PxC_bits.bit0
+#define TXPU _papu6  // TX pin pull-high control ex) GPIOC->PxPU_bits.bit0
 
 /**** select simulation uart baud for 8MHz system clock ****/
 //	#define BAUDRATE	404		// baud rate 4800,395~413
