@@ -14,34 +14,38 @@
  * @RELEASE HISTORY
  *
  * DATE                     NAME           DESCRIPTION
- * v4.1_14020824            E.Rahmanian    Create
- * v4.3_14020830            E.Rahmanian    add{EMF.Button.h}
+ * v4.3_14020830            E.Rahmanian    Create
  ******************************************************************************************
  */
-#ifndef EMF_H
-#define EMF_H
+#ifndef EMF_BUTTON_IDE3000__V3__HT8_H
+#define EMF_BUTTON_IDE3000__V3__HT8_H
+#if defined(IDE3000__V3__HT8)
 
-#define EMF_C
-#define EMF_VERSION_4_3_0_0
-//=========================================================================================
-// includes
-//=========================================================================================
-#include "EMF.Config.h"
-#include "EMF.Preparation.h"
-#include "EMF.Driver.h"
-#include "EMF.IDE.h"
-#include "EMF.DataType.h"
-#include "EMF.Standards.h"
-#include "EMF.Watchdog.h"
-#include "EMF.Init.h"
-#include "EMF.System.h"
-#include "EMF.BitManipulation.h"
-#include "EMF.GIO.h"
-#include "EMF.Timer.h"
-#include "EMF.Delay.h"
-#include "EMF.SoftWareUart.h"
-// #include "EMF.Adc.h"
-// #include "EMF.EEPROM.h"
-#include "EMF.Button.h"
+/**
+* @code
+#include "EMF.h"
+#include "HT66F004.h"
 
+void main() {
+    EMF_init();
+    SetCoreClockTo_HIRC_DIV1_8MHZ_Return_1Ok_0Failed();
+
+    GIO_Init(GIOB, 0b11, GIO_MODE_INPUT, GIO_INPUT_PULLLUP);
+    while (1){
+        SoftWareUART_Transmit_Byte(Button_1Detect_0NotDetect(GIOB, 0, 0));
+        SoftWareUART_Transmit_Byte(Button_1Detect_0NotDetect(GIOB, 1, 0));
+        SoftWareUART_Transmit_Byte('\n');
+        delay_tick(250000);
+        delay_tick(250000);
+        delay_tick(250000);
+    }
+}
+* @endcode
+*/
+#define ButtonDebounceTick() delay_tick(2500)
+//=========================================================================================
+//=========================================================================================
+bool Button_1Detect_0NotDetect(GIO_TypeDef *Ex_GIOA, uint8 PinNumber_0tox, bool DetectValue);
+
+#endif
 #endif
