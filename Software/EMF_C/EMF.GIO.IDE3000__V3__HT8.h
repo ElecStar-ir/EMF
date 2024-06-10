@@ -1,25 +1,22 @@
 /**
- ******************************************************************************************
- * Copyright (c) Electro Pardazesh Daghigh Aria(EPDA).Ltd Corporation. All
- *rights reserved. This software is licensed under the MIT License.
- *
- * This file is part of EMF(EPDA Multi Microcontroller Framework).
- *
- * @author  Ebrahim Rahmanian (elecstar.ir@gmail.com) (www.elecstar.ir)
- * @brief
- ******************************************************************************************
- * @attention
- *
- ******************************************************************************************
- * @RELEASE HISTORY
- *
- * DATE                     NAME           DESCRIPTION
- * v4.1_14020824            E.Rahmanian    Create
- * v4.2.1_14020829          E.Rahmanian    Optimize{Change Name:GIO_ReadUntilDetectValue_1Pins_Return_1Detect_0TimeOut to GIO_ReadUntilDetectValue_1Pin_Return_1Detect_0TimeOut}
- *                                         Fixed{GIO_DirectWrite_Pins_Low_WithMask_Defsub}
- *                                         Add{Example code}
- ******************************************************************************************
- */
+******************************************************************************************
+* This file is part of EMF(Effective Multi Microcontroller Framework).
+*
+* @author  Ebrahim Rahmanian (elecstar.ir@gmail.com) (www.elecstar.ir)
+* @brief
+******************************************************************************************
+* @attention
+*
+******************************************************************************************
+* @RELEASE HISTORY
+*
+* DATE                     NAME           DESCRIPTION
+* v4.1_14020824            E.Rahmanian    Create
+* v4.2.1_14020829          E.Rahmanian    Optimize{Change Name:GIO_ReadUntilDetectValue_1Pins_Return_1Detect_0TimeOut to GIO_ReadUntilDetectValue_1Pin_Return_1Detect_0TimeOut}
+*                                         Fixed{GIO_DirectWrite_Pins_Low_WithMask_Defsub}
+*                                         Add{Example code}
+******************************************************************************************
+*/
 #ifndef EMF_GIO_IDE3000__V3__HT8_H
 #define EMF_GIO_IDE3000__V3__HT8_H
 #if defined(IDE3000__V3__HT8__HT66F002_0025_003_004) || \

@@ -1,9 +1,6 @@
 /**
  ******************************************************************************************
- * Copyright (c) Electro Pardazesh Daghigh Aria(EPDA).Ltd Corporation. All
- *rights reserved. This software is licensed under the MIT License.
- *
- * This file is part of EMF(EPDA Multi Microcontroller Framework).
+ * This file is part of EMF(Effective Multi Microcontroller Framework).
  *
  * @author  Ebrahim Rahmanian (elecstar.ir@gmail.com) (www.elecstar.ir)
  * @brief
@@ -21,7 +18,7 @@
 #define EMF_H
 
 #define EMF_CPP
-#define EMF_VERSION_4_0_2_0
+#define EMF_VERSION_4_0_3_0
 //=========================================================================================
 // includes
 //=========================================================================================
