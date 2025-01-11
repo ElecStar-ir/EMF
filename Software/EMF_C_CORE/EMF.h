@@ -13,6 +13,7 @@
 * v4.1_14020824            E.Rahmanian    Create
 * v4.3_14020830            E.Rahmanian    add{EMF.Button.h}
 * v5.0_14031021            E.Rahmanian    Optimize
+* v5.1_14031022            E.Rahmanian    Update Version Define
 ******************************************************************************************
 *EMF Targets :
 *1)Variable Types
@@ -29,7 +30,7 @@
 #define EMF_H
 
 #define EMF_C
-#define EMF_VERSION_5_0_0_0
+#define EMF_VERSION_5_1_0_0
 //=========================================================================================
 // includes
 //=========================================================================================

@@ -12,6 +12,7 @@
 *
 * DATE                     NAME           DESCRIPTION
 * v5.0_14031021            E.Rahmanian    Create
+* v5.1_14031022            E.Rahmanian    add new mcu
 ******************************************************************************************
 */
 #if defined(EMF_C)
@@ -21,12 +22,10 @@
     #include "EMF.MCU.IDE3000__V2__HT8__HT66F002_0025_003_004__HT66F002.h"
     #include "EMF.MCU.IDE3000__V3__HT8__HT66F002_0025_003_004__HT66F004.h"
     #include "EMF.MCU.IDE3000__V3__HT8__HT66F0021_31_41__HT66F0031.h"
+    #include "EMF.MCU.IDE3000__V3__HT8__HT66F0021_31_41__HT66F0021.h"
 
 
-    #if !defined(IDE3000__V2__HT8__HT66F002_0025_003_004__HT66F002) && \
-        !defined(IDE3000__V3__HT8__HT66F002_0025_003_004__HT66F004) && \
-        !defined(IDE3000__V3__HT8__HT66F0021_31_41__HT66F0031)
-        
+    #if !defined(EMF_MCU_SELECTED)
         #error "Please Uncomment the target MCU define in EMF.Config.h"
     #endif
     

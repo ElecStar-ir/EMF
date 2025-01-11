@@ -13,6 +13,7 @@
 * DATE                     NAME           DESCRIPTION
 * v4.1_14020824            E.Rahmanian    Create
 * v5.0_14031021            E.Rahmanian    Optimize
+* v5.1_14031022            E.Rahmanian    Fixed
 ******************************************************************************************
 */
 #include "EMF.h"
@@ -80,26 +81,26 @@ uint32 EMF_GetCoreClock_HZ() {
 bool EMF_SetCoreClockTo_HIRC_DIV64_125KHZ_Return_1Ok_0Failed(){
     _hircen = 1; _cks2 = 1; _cks1 = 1; _cks0 = 0;	//set Fsys as FH/64
     while (!_hircf);  // wait until ready
-    return (125000 == GetCoreClock_HZ());
+    return (125000 == EMF_GetCoreClock_HZ());
 }
 //=========================================================================================
 //=========================================================================================
 bool EMF_SetCoreClockTo_HIRC_DIV1_8MHZ_Return_1Ok_0Failed(){
     _hircen = 1; _cks2 = 0; _cks1 = 0; _cks0 = 0;	//set Fsys as FH/1
     while (!_hircf);  // wait until ready
-    return (8000000 == GetCoreClock_HZ());
+    return (8000000 == EMF_GetCoreClock_HZ());
 }
 //=========================================================================================
 //=========================================================================================
 bool EMF_SetCoreClockTo_HIRC_DIV2_4MHZ_Return_1Ok_0Failed(){
     _hircen = 1; _cks2 = 0; _cks1 = 0; _cks0 = 1;	//set Fsys as FH/2
     while (!_hircf);  // wait until ready
-    return (4000000 == GetCoreClock_HZ());
+    return (4000000 == EMF_GetCoreClock_HZ());
 }
 //=========================================================================================
 //=========================================================================================
 bool EMF_SetCoreClockTo_LIRC_32KHZ_Return_1Ok_0Failed(){
     _cks2 = 0; _cks1 = 0; _cks0 = 0;	//set Fsys as FLIRC(32K)
-    return (32000 == GetCoreClock_HZ());
+    return (32000 == EMF_GetCoreClock_HZ());
 }
 #endif

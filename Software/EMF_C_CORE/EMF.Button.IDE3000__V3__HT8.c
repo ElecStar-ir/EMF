@@ -17,6 +17,7 @@
 */
 #include "EMF.h"
 #if defined(EMF_BUTTON_IDE3000__V3__HT8_H)
+
 bool EMF_Button_1Detect_0NotDetect(GIO_TypeDef *Ex_GPIOA, uint8 PinNumber_0tox, bool DetectValue){
     if(Get_1Bit_Return_0or1_SubfDef(Ex_GPIOA->Px, PinNumber_0tox) == DetectValue){
         ButtonDebounceTick();
@@ -26,4 +27,5 @@ bool EMF_Button_1Detect_0NotDetect(GIO_TypeDef *Ex_GPIOA, uint8 PinNumber_0tox, 
     }
     return 0;
 }
+
 #endif

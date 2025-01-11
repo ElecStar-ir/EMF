@@ -12,12 +12,14 @@
 *
 * DATE                     NAME           DESCRIPTION
 * v5.0_14031021            E.Rahmanian    Create
+* v5.1_14031022            E.Rahmanian    Optimize
 ******************************************************************************************
 */
 #if defined(IDE3000__V3__HT8__HT66F002_0025_003_004__HT66F004)
 #ifndef EMF_PREPARATION_IDE3000__V3__HT8__HT66F002_0025_003_004__HT66F004_H
 #define EMF_PREPARATION_IDE3000__V3__HT8__HT66F002_0025_003_004__HT66F004_H
-  
+    
+    #define EMF_MCU_SELECTED (1)
     #include "HT66F004.h"
     #include "STDINT.H"
     #include "STDLIB.H"

@@ -21,8 +21,8 @@
 #define EMF_SYSTEM_H
 
     #include "EMF.System.IDE3000__V3__HT8__HT66F002_0025_003_004.h"
-    #include "EMF.System.IDE3000__V3__HT8__HT66F0021_31_41.h"
     #include "EMF.System.IDE3000__V2__HT8__HT66F002_0025_003_004.h"
-
+    #include "EMF.System.IDE3000__V3__HT8__HT66F0021_31_41.h"
+    
 #endif
 #endif

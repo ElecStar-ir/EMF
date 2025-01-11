@@ -13,6 +13,7 @@
 * DATE                     NAME           DESCRIPTION
 * v4.3_14020830            E.Rahmanian    Create
 * v5.0_14031021            E.Rahmanian    Optimize
+* v5.1_14031022            E.Rahmanian    Fixed
 ******************************************************************************************
 */
 #if defined(IDE3000__V3__HT8)
@@ -40,7 +41,7 @@ void main() {
 }
 * @endcode
 */
-#define ButtonDebounceTick() delay_tick(2500)
+#define ButtonDebounceTick() EMF_delay_tick(2500)
 //=========================================================================================
 //=========================================================================================
 bool EMF_Button_1Detect_0NotDetect(GIO_TypeDef *Ex_GIOA, uint8 PinNumber_0tox, bool DetectValue);

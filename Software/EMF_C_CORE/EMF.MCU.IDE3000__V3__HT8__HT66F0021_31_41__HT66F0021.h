@@ -11,39 +11,41 @@
 * @RELEASE HISTORY
 *
 * DATE                     NAME           DESCRIPTION
-* v5.0_14031021            E.Rahmanian    Create
+* v5.1_14031022            E.Rahmanian    Create
 * v5.1_14031022            E.Rahmanian    Optimize
 ******************************************************************************************
 */
-#if defined(IDE3000__V2__HT8__HT66F002_0025_003_004__HT66F002)
-#ifndef EMF_MCU_IDE3000__V2__HT8__HT66F002_0025_003_004__HT66F002_H
-#define EMF_MCU_IDE3000__V2__HT8__HT66F002_0025_003_004__HT66F002_H
+#if defined(IDE3000__V3__HT8__HT66F0021_31_41__HT66F0021)
+#ifndef EMF_PREPARATION_IDE3000__V3__HT8__HT66F0021_31_41__HT66F0021_H
+#define EMF_PREPARATION_IDE3000__V3__HT8__HT66F0021_31_41__HT66F0021_H
     
     #define EMF_MCU_SELECTED (1)
-    #include "HT66F002.h"
+    #include "HT66F0021.h"
+    #include "STDINT.H"
     #include "STDLIB.H"
     #include "STRING.H"
+    #include "build-in.h"
     #include "ctype.h"
     #include "math.h"
     #include "time.h"
     
     //Family DNA!
-    #define IDE3000__V2__HT8__HT66F002_0025_003_004 (1)
+    #define IDE3000__V3__HT8__HT66F0021_31_41 (1)
 
     //Group DNA!
-    #define IDE3000__V2__HT8 (1)
+    #define IDE3000__V3__HT8 (1)
 
     //Driver DNA!
-    #define IDE3000__V2 (1)
+    #define IDE3000__V3 (1)
 
     //IDE DNA!
     #define IDE3000 (1)
 
     //Parts Of MCU DNA!
     #define EMF__IDE3000 (1)
-    #define EMF__DRIVER_V2 (1)
+    #define EMF__DRIVER_V3 (1)
     #define EMF__GROUP_HT8 (1)
-    #define EMF__FAMILY_HT66F002_0025_003_004 (1)  // HT66F002,HT66F0025,HT66F003,HT66F004
-    #define EMF__MCU_HT66F002 (1)
+    #define EMF__FAMILY_HT66F0021_31_41 (1)  // HT66F002,HT66F0025,HT66F003,HT66F004
+    #define EMF__MCU_HT66F0021 (1)
 #endif
 #endif
