@@ -12,6 +12,7 @@
  *
  * DATE                     NAME           DESCRIPTION
  * v4.0_14020803            E.Rahmanian    Create
+ * v5.0_14031024            E.Rahmanian    Optimize
  ******************************************************************************************
  */
 #include "EMF.h"
@@ -19,7 +20,7 @@
 
 //=========================================================================================
 //=========================================================================================
-bool EMF::System::SetCoreClockTo_HSI_1MHZ_Return_1Ok_0Failed() {
+bool EMF::System::EMF_SetCoreClockTo_HSI_1MHZ_Return_1Ok_0Failed() {
     RCC_OscInitTypeDef RCC_OscInitStruct = {0};
     RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 
@@ -49,7 +50,7 @@ bool EMF::System::SetCoreClockTo_HSI_1MHZ_Return_1Ok_0Failed() {
 }
 //=========================================================================================
 //=========================================================================================
-bool EMF::System::SetCoreClockTo_HSI_8MHZ_Return_1Ok_0Failed() {
+bool EMF::System::EMF_SetCoreClockTo_HSI_8MHZ_Return_1Ok_0Failed() {
     RCC_OscInitTypeDef RCC_OscInitStruct = {0};
     RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 
@@ -78,11 +79,11 @@ bool EMF::System::SetCoreClockTo_HSI_8MHZ_Return_1Ok_0Failed() {
 }
 //=========================================================================================
 //=========================================================================================
-bool EMF::System::SetCoreClockTo_HSI_PLL_24MHZ_Return_1Ok_0Failed() {
+bool EMF::System::EMF_SetCoreClockTo_HSI_PLL_24MHZ_Return_1Ok_0Failed() {
     if (RCC_CFGR_SWS_PLL) { /* PLL used as system clock */
         // If pll is on, first turn off pll and set core speed to hsi without
         // pll
-        if (SetCoreClockTo_HSI_8MHZ_Return_1Ok_0Failed() == 0) {
+        if (EMF_SetCoreClockTo_HSI_8MHZ_Return_1Ok_0Failed() == 0) {
             return 0;
         }
     }
@@ -119,11 +120,11 @@ bool EMF::System::SetCoreClockTo_HSI_PLL_24MHZ_Return_1Ok_0Failed() {
 }
 //=========================================================================================
 //=========================================================================================
-bool EMF::System::SetCoreClockTo_HSI_PLL_48MHZ_Return_1Ok_0Failed() {
+bool EMF::System::EMF_SetCoreClockTo_HSI_PLL_48MHZ_Return_1Ok_0Failed() {
     if (RCC_CFGR_SWS_PLL) { /* PLL used as system clock */
         // If pll is on, first turn off pll and set core speed to hsi without
         // pll
-        if (SetCoreClockTo_HSI_8MHZ_Return_1Ok_0Failed() == 0) {
+        if (EMF_SetCoreClockTo_HSI_8MHZ_Return_1Ok_0Failed() == 0) {
             return 0;
         }
     }

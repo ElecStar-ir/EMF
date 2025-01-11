@@ -12,30 +12,37 @@
  *
  * DATE                     NAME           DESCRIPTION
  * v4.0_14020803            E.Rahmanian    Create
+ * v5.0_14031024            E.Rahmanian    Optimize
  ******************************************************************************************
+ *EMF Targets :
+*1)Variable Types
+*2)Watchdog
+*3)MCU Speed + Restart MCU
+*4)BitManipulation
+*5)GIO
+*6)Delay
+*7)Button
+*8)EEPROM or Write flash
+*9)Math + String + Time + TrueFloat + Convert
  */
 #ifndef EMF_H
 #define EMF_H
 
 #define EMF_CPP
-#define EMF_VERSION_4_0_3_0
+#define EMF_VERSION_5_0_0_0
 //=========================================================================================
 // includes
 //=========================================================================================
 #include "EMF.Config.h"
-#include "EMF.Preparation.h"
-#include "EMF.Driver.h"
-#include "EMF.IDE.h"
+#include "EMF.MCU.h"
 #include "EMF.DataType.h"
+#include "EMF.BitManipulation.h"
 #include "EMF.Standards.h"
+//#include "EMF.Watchdog.h"
 #include "EMF.Init.h"
 #include "EMF.System.h"
-#include "EMF.BitManipulation.h"
 #include "EMF.GIO.h"
 #include "EMF.Timer.h"
 #include "EMF.Delay.h"
-// #include "EMF.OneWire.h"
-// #include "EMF.I2C.h"
-// #include "EMF.External.h"
 
 #endif

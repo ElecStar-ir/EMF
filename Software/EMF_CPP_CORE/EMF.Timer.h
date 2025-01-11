@@ -12,15 +12,14 @@
  *
  * DATE                     NAME           DESCRIPTION
  * v4.0_14020803            E.Rahmanian    Create
+ * v5.0_14031024            E.Rahmanian    Optimize
  ******************************************************************************************
  */
+#if defined(EMF_CPP)
 #ifndef EMF_TIMER_H
 #define EMF_TIMER_H
-#if defined(EMF_CPP)
 
-    #if defined(IAR__HAL__F0__STM32F030X6)
-        #include "EMF.Timer.IAR__HAL__F0__STM32F030X6.h"
-    #endif
+    #include "EMF.Timer.IAR__HAL__F0__STM32F030X6.h"
 
 #endif
 #endif

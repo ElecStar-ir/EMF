@@ -13,7 +13,7 @@
 * DATE                     NAME           DESCRIPTION
 * v4.3_14020830            E.Rahmanian    Create
 * v5.0_14031021            E.Rahmanian    Optimize
-* v5.1_14031022            E.Rahmanian    Fixed
+* v5.1.1_14031024          E.Rahmanian    Fixed
 ******************************************************************************************
 */
 #if defined(IDE3000__V3__HT8)
@@ -27,16 +27,16 @@
 
 void main() {
     EMF_init();
-    SetCoreClockTo_HIRC_DIV1_8MHZ_Return_1Ok_0Failed();
+    EMF_SetCoreClockTo_HIRC_DIV1_8MHZ_Return_1Ok_0Failed();
 
-    GIO_Init(GIOB, 0b11, GIO_MODE_INPUT, GIO_INPUT_PULLLUP);
+    EMF_GIO_Init(GIOB, 0b11, GIO_MODE_INPUT, GIO_INPUT_PULLLUP);
     while (1){
-        SoftWareUART_Transmit_Byte(Button_1Detect_0NotDetect(GIOB, 0, 0));
-        SoftWareUART_Transmit_Byte(Button_1Detect_0NotDetect(GIOB, 1, 0));
-        SoftWareUART_Transmit_Byte('\n');
-        delay_tick(250000);
-        delay_tick(250000);
-        delay_tick(250000);
+        EMF_SoftWareUART_Transmit_Byte(EMF_Button_1Detect_0NotDetect(GIOB, 0, 0));
+        EMF_SoftWareUART_Transmit_Byte(EMF_Button_1Detect_0NotDetect(GIOB, 1, 0));
+        EMF_SoftWareUART_Transmit_Byte('\n');
+        EMF_delay_tick(250000);
+        EMF_delay_tick(250000);
+        EMF_delay_tick(250000);
     }
 }
 * @endcode

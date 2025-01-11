@@ -12,13 +12,13 @@
  *
  * DATE                     NAME           DESCRIPTION
  * v4.0_14020803            E.Rahmanian    Create
+ * v5.0_14031024            E.Rahmanian    Optimize
  ******************************************************************************************
  */
 #include "EMF.h"
-#include <stdio.h>
 #if defined(EMF_TIMER_IAR__HAL__F0__STM32F030X6_H)
 
-void EMF::Timer::Timer_RegisterClockOnOff(TIM_TypeDef *Timerx_Ptr__Ex_TIM1,
+void EMF::Timer::EMF_Timer_RegisterClockOnOff(TIM_TypeDef *Timerx_Ptr__Ex_TIM1,
                                           bool Timerx_Clock_1On0Off) {
     switch ((uint32)Timerx_Ptr__Ex_TIM1) {
     #ifdef TIM1
@@ -368,7 +368,7 @@ uint32 _Get_APB2TimerxClock_HZ() {
 }
 //=========================================================================================
 //=========================================================================================
-uint32 EMF::Timer::Get_APBxTimerClock_HZ(TIM_TypeDef *Timerx_Ptr__Ex_TIM1) {
+uint32 EMF::Timer::EMF_Get_APBxTimerClock_HZ(TIM_TypeDef *Timerx_Ptr__Ex_TIM1) {
     #ifdef TIM1
         if(Timerx_Ptr__Ex_TIM1 == TIM1){ 
             #ifdef RCC_APB1ENR_TIM1EN
@@ -698,4 +698,5 @@ uint32 EMF::Timer::Get_APBxTimerClock_HZ(TIM_TypeDef *Timerx_Ptr__Ex_TIM1) {
 
    return 0;
 }
+
 #endif

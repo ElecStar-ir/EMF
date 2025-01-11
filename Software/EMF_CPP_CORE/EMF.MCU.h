@@ -14,14 +14,13 @@
  * v4.0_14020803            E.Rahmanian    Create
  ******************************************************************************************
  */
+#if defined(EMF_CPP)
 #ifndef EMF_PREPARATION_H
 #define EMF_PREPARATION_H
-#if defined(EMF_CPP)
 
-    #if defined(IAR__HAL__F0__STM32F030X6__STM32F030F4P6)
-        #include "EMF.Preparation.IAR__HAL__F0__STM32F030X6__STM32F030F4P6.h"
-    // #elif defined()
-    #else
+    #include "EMF.MCU.IAR__HAL__F0__STM32F030X6__STM32F030F4P6.h"
+
+    #if !defined(EMF_MCU_SELECTED)
         #error "Please Uncomment the target MCU define in EMF.Config.h"
     #endif
 

@@ -12,12 +12,12 @@
  *
  * DATE                     NAME           DESCRIPTION
  * v4.0_14020803            E.Rahmanian    Create
- *
+ * v5.0_14031024            E.Rahmanian    Optimize
  ******************************************************************************************
  */
+#if defined(IAR__HAL)
 #ifndef EMF_BITMANIPULATION_IAR__HAL_H
 #define EMF_BITMANIPULATION_IAR__HAL_H
-#if defined(IAR__HAL)
 
     #define MaskBit0 (0x1U)
     #define MaskBit1 (0x2U)

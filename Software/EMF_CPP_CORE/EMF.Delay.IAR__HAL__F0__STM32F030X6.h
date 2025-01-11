@@ -12,11 +12,12 @@
  *
  * DATE                     NAME           DESCRIPTION
  * v4.0_14020803            E.Rahmanian    Create
+ * v5.0_14031024            E.Rahmanian    Optimize
  ******************************************************************************************
  */
+#if defined(IAR__HAL__F0__STM32F030X6)
 #ifndef EMF_DELAY_IAR__HAL__F0__STM32F030X6_H
 #define EMF_DELAY_IAR__HAL__F0__STM32F030X6_H
-#if defined(IAR__HAL__F0__STM32F030X6)
 
 namespace EMF::Delay {
 
@@ -27,8 +28,8 @@ namespace EMF::Delay {
 
     int main(void) {
         EMF_init();
-        SetCoreClockTo_HSI_8MHZ_Return_1Ok_0Failed();
-        Delay_Class d;
+        EMF_SetCoreClockTo_HSI_8MHZ_Return_1Ok_0Failed();
+        EMF_Delay_Class d;
         bool a;
         a = d.Delay_Config_return_0Error_1Ok(TIM1);
 
@@ -53,10 +54,10 @@ namespace EMF::Delay {
         uint32 a;
         EMF_init();
 
-        a = SetCoreClockTo_HSI_PLL_48MHZ_Return_1Ok_0Failed();
+        a = EMF_SetCoreClockTo_HSI_PLL_48MHZ_Return_1Ok_0Failed();
         printf("SetCoreClock 48MHZ=> 1OK 0Error => %d\n", a);
 
-        Delay_Class d;
+        EMF_Delay_Class d;
         a = d.Delay_Config_return_0Error_1Ok(TIM3);
         printf("Delay_Config with TIM3 And F_cpu=48MHz => 1OK 0Error => %d\n",a);
 
@@ -70,7 +71,7 @@ namespace EMF::Delay {
         a = HAL_GetTick() - a;
         printf("Delay_us Tested With Tick Timer => (us):%d\n", a * 1000);
 
-        a = SetCoreClockTo_HSI_8MHZ_Return_1Ok_0Failed();
+        a = EMF_SetCoreClockTo_HSI_8MHZ_Return_1Ok_0Failed();
         printf("SetCoreClock 8MHZ=> 1OK 0Error => %d\n", a);
 
         a = d.Delay_Config_return_0Error_1Ok(TIM3);
@@ -101,8 +102,8 @@ namespace EMF::Delay {
     int main(void){
         EMF_init();
 
-        SetCoreClockTo_HSI_8MHZ_Return_1Ok_0Failed();
-        static Delay_Class d;
+        EMF_SetCoreClockTo_HSI_8MHZ_Return_1Ok_0Failed();
+        static EMF_Delay_Class d;
         bool a;
         uint32 a1,b;
 
@@ -123,16 +124,17 @@ namespace EMF::Delay {
 * @brief This Class Need Use Timer to Create Delay_ms Or Delay_us
 * @brief Please uncomment "#define HAL_TIM_MODULE_ENABLED" in "stm32f0xx_hal_conf.h"
 */
+
 #if defined(HAL_TIM_MODULE_ENABLED)
-class Delay_Class {
+class EMF_Delay_Class {
    private:
     TIM_HandleTypeDef _htimx = {0};
     uint32 _Timer_CNT_FirstValue = ~0;  // Fake Max value
     bool _DelayClass_configState_1Ok_0NotConfiged = false;
 
    public:
-    Delay_Class();   // Constructor
-    ~Delay_Class();  // Distructor
+    EMF_Delay_Class();   // Constructor
+    ~EMF_Delay_Class();  // Distructor
     /**
      * @brief The minimum speed of APBxTimerClock must be 1MHZ
     */

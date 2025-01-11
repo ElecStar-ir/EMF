@@ -12,40 +12,47 @@
  *
  * DATE                     NAME           DESCRIPTION
  * v4.0_14020803            E.Rahmanian    Create
+ * v5.0_14031024            E.Rahmanian    Optimize
  ******************************************************************************************
  */
+#if defined(EMF_CPP)
 #ifndef EMF_STANDARDS_H
 #define EMF_STANDARDS_H
-#if defined(EMF_CPP)
+
 /*
-    EMF Code Style is Google C/C++ Format + { BasedOnStyle: Google, IndentWidth: 4, TabWidth: 4 }
     ============================EMF Prefix and suffix========================================
-    _DEF			=>		Define   ex)#define EMMF_MCUTYPE_DEF STM32
-    _sub			=>		subroutine  ex)Void GetIp_sub();
-    _subf			=>		subFunction  ex)char GetIp_subf();
-    _SUBDEF			=>		subroutine Define
+    EMF_            =>      First of subroutine, Function, subdef, subfdef | ex)EMF_Read_Value_0False_1True()
+    _DEF			=>		Define  | ex)#define EMMF_MCUTYPE_DEF STM32
+    _sub			=>		subroutine | ex)Void GetIp_sub();
+    _subf			=>		subFunction | ex)char GetIp_subf();
+    _SUBDEF			=>		subroutine  Define
     _SUBFDEF		=>		subFunction Define
     _DEFSUB 		=>		subroutine Define
     _DEFSUBF		=>		subFunction Define
-    _psub			=>		Pointer subroutine  ex)Void (*GetIp_psub)();
-    _psubf			=>		Pointer subFunction  ex)char (*GetIp_psubf)();
-    _				=>		Local(private) ex) bool _b5;
+    _psub			=>		Pointer subroutine | ex)Void (*GetIp_psub)();
+    _psubf			=>		Pointer subFunction | ex)char (*GetIp_psubf)();
+    _				=>		Local(private) | ex) bool _b5;
     _				=>		in c Language This character Equivalent  name space ! ex)EMMF_Uart__test_sub();
     __				=>		in c Language This characters means end of the name space and begim main sub or subf name start ! ex)EMMF_Uart__test_sub(); ->>name space is EMMF>Uart and sub name is est_sub in cpp language
-    _t				=>		Type     ex)uint32_t a;
-    _T				=>		Type     ex)uint32_T a;
-    _DataType		=>		Type     ex)uint32_DataType a;
-    _L				=>		Step     ex)void Uart_L1_init_sub();   char_t Uart_L2_Read_subf();
+    _				=>		Help Return Value of Function | ex)EMF_Read_Value_0False_1True()
+    __				=>		Help Return Value of Function | ex)EMF_Read_Value__0False_1True()    
+    ___				=>		Help Return Value of Function | ex)EMF_Read_Value__0False_1True()
+    _Return		    =>		Help Return Value of Function | ex)EMF_Read_Value__Return_0False_1True()
+    _t				=>		Type  |  ex)uint32_t a;
+    _T				=>		Type  |  ex)uint32_T a;
+    _DataType		=>		Type  |  ex)uint32_DataType a;
+    _L				=>		Step  |  ex)void Uart_L1_init_sub();   char_t Uart_L2_Read_subf();
     _class			=>		class
     _enum			=>		Enum
     _ptr			=>		Pointer
     _p				=>		pointer
     _ns				=>		namespace
     _struct			=>		struct
-    _m				=>		method  ex)Void GetIp_sub_m1();  Void GetIp_sub_m2();
+    _union			=>		union
+    _m				=>		method | ex)Void GetIp_sub_m1();  Void GetIp_sub_m2();
     _r				=>		volatile const		=>		Defines 'read only' permissions
-    _w				=>		volatile		=>		 Defines 'write only' permissions
-    _rw				=>		volatile		=>		 Defines 'read / write' permissions
+    _w				=>		volatile	    	=>		 Defines 'write only' permissions
+    _rw				=>		volatile	    	=>		 Defines 'read / write' permissions
     _const			=>		const
     inlin			=>		inline
     _array			=>		array
@@ -53,7 +60,7 @@
     ex)N9			=>		-9
     ex)N90P6		=>		-9.6
     array_2_2		=>		array[2][2]
-    Lx		        =>		Level Ex) L1_init(); L2_SetValue(255);
+    Lx		        =>		Level | Ex) L1_init(); L2_SetValue(255);
 //=========================================================================================
 //=========================================================================================
     doxygen: https://www.doxygen.nl/manual/commands.html
@@ -111,21 +118,38 @@
     IDE Settings:
 
     Visual Studio Code Settings:
-    CLang Format :
-    { BasedOnStyle: Google,
-    IndentWidth: 4,
-    TabWidth: 4,
-    AllowShortIfStatementsOnASingleLine: false,
-    ColumnLimit: 0,
-    IndentPPDirectives: BeforeHash }
+        CLang Format :
+        { BasedOnStyle: Google,
+        IndentWidth: 4,
+        TabWidth: 4,
+        AllowShortIfStatementsOnASingleLine: false,
+        ColumnLimit: 0,
+        IndentPPDirectives: BeforeHash }
 
-    C_Cpp › Default: Intelli Sense Mode : clang-windows-x64
-    C_Cpp: Intelli Sense Engine : Tag parser Or default
+        C_Cpp › Default: Intelli Sense Mode : clang-windows-x64
+        C_Cpp: Intelli Sense Engine : Tag parser Or default
 
-    Add include paths :
-    1)Ctrl + Shift + P
-    2)Select "C/C++:Edif Configuration (Ui)"
-    3)Add Include paths
+        Add include paths :
+        1)Ctrl + Shift + P
+        2)Select "C/C++:Edif Configuration (Ui)"
+        3)Add Include paths
+
+        One include path per line Example :
+        C:/00Active_Projects/EMF@Effective Multi Microcontroller Framework/EMF/Software/Template_CPP/STM32F030F4P6@HAL_Driver@IAR_Template/Core/Inc\**
+        C:/00Active_Projects/EMF@Effective Multi Microcontroller Framework/EMF/Software/Template_CPP/STM32F030F4P6@HAL_Driver@IAR_Template/Drivers/STM32F0xx_HAL_Driver/Inc\**
+        C:/00Active_Projects/EMF@Effective Multi Microcontroller Framework/EMF/Software/Template_CPP/STM32F030F4P6@HAL_Driver@IAR_Template/Drivers/STM32F0xx_HAL_Driver/Inc/Legacy\**
+        C:\Program Files\IAR Systems\Embedded Workbench9.4\arm\inc\**
+        C:/00Active_Projects/EMF@Effective Multi Microcontroller Framework/EMF/Software/EMF_CPP_CORE\**
+
+        Browse: path Example
+        C:/00Active_Projects/EMF@Effective Multi Microcontroller Framework/EMF/Software/Template_CPP/STM32F030F4P6@HAL_Driver@IAR_Template/Core/Inc\**
+        C:/00Active_Projects/EMF@Effective Multi Microcontroller Framework/EMF/Software/Template_CPP/STM32F030F4P6@HAL_Driver@IAR_Template/Drivers/STM32F0xx_HAL_Driver/Inc\**
+        C:/00Active_Projects/EMF@Effective Multi Microcontroller Framework/EMF/Software/Template_CPP/STM32F030F4P6@HAL_Driver@IAR_Template/Drivers/STM32F0xx_HAL_Driver/Inc/Legacy\**
+        C:\Program Files\IAR Systems\Embedded Workbench9.4\arm\inc\**
+        C:/00Active_Projects/EMF@Effective Multi Microcontroller Framework/EMF/Software/EMF_CPP_CORE\**
+
+        Tab space : 4Space
 */
+
 #endif
 #endif

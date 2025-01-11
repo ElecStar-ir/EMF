@@ -12,15 +12,14 @@
  *
  * DATE                     NAME           DESCRIPTION
  * v4.0_14020803            E.Rahmanian    Create
+ * v5.0_14031024            E.Rahmanian    Optimize
  ******************************************************************************************
  */
+#if defined(EMF_CPP)
 #ifndef EMF_DATATYPE_H
 #define EMF_DATATYPE_H
-#if defined(EMF_CPP)
 
-    #if defined(IAR__HAL)
-        #include "EMF.DataType.IAR__HAL.h"
-    #endif
+    #include "EMF.DataType.IAR__HAL.h"
     
 #endif
 #endif
