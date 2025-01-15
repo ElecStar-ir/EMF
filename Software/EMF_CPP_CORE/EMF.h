@@ -13,6 +13,7 @@
  * DATE                     NAME           DESCRIPTION
  * v4.0_14020803            E.Rahmanian    Create
  * v5.0_14031024            E.Rahmanian    Optimize
+ * v5.0.1_14031028          E.Rahmanian    Edit EMF version
  ******************************************************************************************
  *EMF Targets :
 *1)Variable Types
@@ -29,7 +30,7 @@
 #define EMF_H
 
 #define EMF_CPP
-#define EMF_VERSION_5_0_0_0
+#define EMF_VERSION_5_0_1_0
 //=========================================================================================
 // includes
 //=========================================================================================

@@ -12,6 +12,7 @@
  *
  * DATE                     NAME           DESCRIPTION
  * v4.0_14020803            E.Rahmanian    Create
+ * v5.0.1_14031028			E.Rahmanian    Optimize
  ******************************************************************************************
  */
 #if defined(IAR__HAL__F0__STM32F030X6__STM32F030F4P6)
@@ -35,8 +36,6 @@
 
     #include "stm32f0xx_hal.h"
 
-    //MCU DNA!
-    #define IAR__HAL__F0__STM32F030X6__STM32F030F4P6 (1)
 
     //Family DNA!
     #define IAR__HAL__F0__STM32F030X6 (1)
