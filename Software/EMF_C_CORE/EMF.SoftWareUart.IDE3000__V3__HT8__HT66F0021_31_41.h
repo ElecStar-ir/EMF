@@ -11,15 +11,12 @@
 * @RELEASE HISTORY
 *
 * DATE                     NAME           DESCRIPTION
-* v4.2.1_14020829          E.Rahmanian    Create
-* v4.2.1_14020829          E.Rahmanian    Add{SoftWareUART_Transmit_Bytes}/Add-Optimize{CodeExample}
-* v5.1.1_14031024          E.Rahmanian    Optimize
-* v5.2_14031101            E.rahmanian    Bug Fixed!
+* v5.2_14031101            E.rahmanian    Create
 ******************************************************************************************
 */
-#if defined(IDE3000__V3__HT8__HT66F002_0025_003_004)
-#ifndef EMF_SOFTWAREUART_IDE3000__V3__HT8__HT66F002_0025_003_004_H
-#define EMF_SOFTWAREUART_IDE3000__V3__HT8__HT66F002_0025_003_004_H
+#if defined(IDE3000__V3__HT8__HT66F0021_31_41)
+#ifndef EMF_SOFTWAREUART_IDE3000__V3__HT8__HT66F0021_31_41_H
+#define EMF_SOFTWAREUART_IDE3000__V3__HT8__HT66F0021_31_41_H
 
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 // Config define
@@ -45,7 +42,7 @@ void EMF_SoftWareUART_Transmit_Byte(uint8 TransmitData);
 //=========================================================================================
 /**
 * @code
-#include "HT66F004.h"
+#include "HT66F0021.h"
 #include "EMF.h"
 
 void main(){

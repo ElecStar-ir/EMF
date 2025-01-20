@@ -11,13 +11,11 @@
 * @RELEASE HISTORY
 *
 * DATE                     NAME           DESCRIPTION
-* v4.2.1_14020829          E.Rahmanian    Create
-* v5.0_14031021            E.Rahmanian    Optimize
-* v5.2_14031101            E.rahmanian    Bug Fixed!
+* v5.2_14031101            E.rahmanian    Create
 ******************************************************************************************
 */
 #include "EMF.h"
-#if defined(EMF_SOFTWAREUART_IDE3000__V3__HT8__HT66F002_0025_003_004_H)
+#if defined(EMF_SOFTWAREUART_IDE3000__V3__HT8__HT66F0021_31_41_H)
 
 /**
   * @brief Simulation UART transmit function.
@@ -49,6 +47,5 @@ void EMF_SoftWareUART_Transmit_Bytes(uint8 *TransmitDataByte0_Ptr, uint8 Lenghh)
 		SoftWareUART_Transmit_Byte(TransmitDataByte0_Ptr[i]);
 	} 
 }
-
 
 #endif

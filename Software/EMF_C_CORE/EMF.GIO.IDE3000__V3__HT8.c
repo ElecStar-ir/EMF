@@ -15,6 +15,7 @@
 * v4.2.1_14020829          E.Rahmanian    Optimize{Change Name:GIO_ReadUntilDetectValue_1Pins_Return_1Detect_0TimeOut to GIO_ReadUntilDetectValue_1Pin_Return_1Detect_0TimeOut}
 *                                         Fixed{GIO_DirectWrite_Pins_Low_WithMask}
 * v5.0_14031021            E.Rahmanian    Optimize
+* v5.2_14031101            E.rahmanian    Bug Fixed!
 ******************************************************************************************
 */
 #include "EMF.h"
@@ -81,12 +82,12 @@ void EMF_GIO_Write_Pins_Toggle(GIO_TypeDef *Ex_GIOA, McuRegType Mask_Ex_0b1011) 
 }
 //=========================================================================================
 //=========================================================================================
-McuRegType GIO_GetWriteState_AllPins(GIO_TypeDef *Ex_GIOA) {
+McuRegType EMF_GIO_GetWriteState_AllPins(GIO_TypeDef *Ex_GIOA) {
     return EMF_GIO_DirectGetWriteState_AllPins(Ex_GIOA);
 }
 //=========================================================================================
 //=========================================================================================
-McuRegType GIO_Read_AllPins(GIO_TypeDef *Ex_GIOA) {
+McuRegType EMF_GIO_Read_AllPins(GIO_TypeDef *Ex_GIOA) {
     return EMF_GIO_DirectRead_AllPins_Defsubf(Ex_GIOA);
 }
 //=========================================================================================
